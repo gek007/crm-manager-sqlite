@@ -1,10 +1,20 @@
 {
+  "/api/cost-types/[id]/route": "app/api/cost-types/[id]/route.js",
+  "/api/cost-types/route": "app/api/cost-types/route.js",
   "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
+  "/api/general-costs/[id]/route": "app/api/general-costs/[id]/route.js",
   "/cities/page": "app/cities/page.js",
+  "/cost-types/[id]/edit/page": "app/cost-types/[id]/edit/page.js",
+  "/cost-types/new/page": "app/cost-types/new/page.js",
+  "/cost-types/page": "app/cost-types/page.js",
   "/employee-types/page": "app/employee-types/page.js",
+  "/general-costs/[id]/edit/page": "app/general-costs/[id]/edit/page.js",
+  "/general-costs/page": "app/general-costs/page.js",
   "/page": "app/page.js",
+  "/projects/[id]/page": "app/projects/[id]/page.js",
   "/projects/new/page": "app/projects/new/page.js",
   "/projects/page": "app/projects/page.js",
+  "/service-types/new/page": "app/service-types/new/page.js",
   "/service-types/page": "app/service-types/page.js",
   "/settings/page": "app/settings/page.js"
 }

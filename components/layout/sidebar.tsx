@@ -33,7 +33,7 @@ export function Sidebar() {
       <div className="flex h-full flex-col">
         {/* Logo */}
         <div className="flex h-16 items-center border-b border-black/5 px-6">
-          <h1 className="text-xl font-bold text-black">
+          <h1 className="text-[26px] font-bold text-black leading-none">
             CRM Manager
           </h1>
         </div>

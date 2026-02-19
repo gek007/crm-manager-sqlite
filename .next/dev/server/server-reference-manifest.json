@@ -8,8 +8,20 @@
           "exportedName": "createProject",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createProject",
           "filename": "app/actions.ts"
@@ -29,7 +41,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/projects/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
@@ -44,8 +58,20 @@
           "exportedName": "updateProject",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateProject",
           "filename": "app/actions.ts"
@@ -65,7 +91,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/projects/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
@@ -80,8 +108,20 @@
           "exportedName": "deleteEmployeeType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteEmployeeType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteEmployeeType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteEmployeeType",
           "filename": "app/actions.ts"
@@ -95,7 +135,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -109,8 +151,20 @@
           "exportedName": "updateEmployeeType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateEmployeeType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateEmployeeType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateEmployeeType",
           "filename": "app/actions.ts"
@@ -124,7 +178,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -138,8 +194,20 @@
           "exportedName": "deleteCostType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCostType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCostType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteCostType",
           "filename": "app/actions.ts"
@@ -153,7 +221,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -167,8 +237,26 @@
           "exportedName": "updateCostType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/[id]/edit/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/[id]/edit/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCostType",
+          "filename": "app/actions.ts"
+        },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCostType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCostType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateCostType",
           "filename": "app/actions.ts"
@@ -182,7 +270,10 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/[id]/edit/page": "action-browser",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -196,8 +287,20 @@
           "exportedName": "deleteServiceType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteServiceType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteServiceType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteServiceType",
           "filename": "app/actions.ts"
@@ -211,7 +314,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -225,8 +330,20 @@
           "exportedName": "deleteGeneralCost",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteGeneralCost",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteGeneralCost",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteGeneralCost",
           "filename": "app/actions.ts"
@@ -240,7 +357,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -254,8 +373,20 @@
           "exportedName": "updateCity",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCity",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateCity",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateCity",
           "filename": "app/actions.ts"
@@ -269,7 +400,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -283,8 +416,26 @@
           "exportedName": "createCostType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCostType",
+          "filename": "app/actions.ts"
+        },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCostType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCostType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createCostType",
           "filename": "app/actions.ts"
@@ -298,7 +449,10 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/new/page": "action-browser",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -312,8 +466,20 @@
           "exportedName": "updateServiceType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateServiceType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateServiceType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateServiceType",
           "filename": "app/actions.ts"
@@ -327,7 +493,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -341,8 +509,20 @@
           "exportedName": "createCity",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCity",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createCity",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createCity",
           "filename": "app/actions.ts"
@@ -356,7 +536,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -370,8 +552,20 @@
           "exportedName": "createEmployeeType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createEmployeeType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createEmployeeType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createEmployeeType",
           "filename": "app/actions.ts"
@@ -385,7 +579,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -399,8 +595,26 @@
           "exportedName": "updateGeneralCost",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateGeneralCost",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateGeneralCost",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/[id]/edit/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/[id]/edit/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateGeneralCost",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateGeneralCost",
           "filename": "app/actions.ts"
@@ -414,7 +628,10 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/[id]/edit/page": "action-browser",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -428,8 +645,26 @@
           "exportedName": "createServiceType",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createServiceType",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createServiceType",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createServiceType",
+          "filename": "app/actions.ts"
+        },
+        "app/service-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/service-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createServiceType",
           "filename": "app/actions.ts"
@@ -443,7 +678,10 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
+        "app/service-types/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -457,8 +695,20 @@
           "exportedName": "createGeneralCost",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createGeneralCost",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createGeneralCost",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createGeneralCost",
           "filename": "app/actions.ts"
@@ -472,7 +722,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -486,8 +738,20 @@
           "exportedName": "deleteCity",
           "filename": "app/actions.ts"
         },
+        "app/cost-types/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCity",
+          "filename": "app/actions.ts"
+        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteCity",
+          "filename": "app/actions.ts"
+        },
+        "app/general-costs/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteCity",
           "filename": "app/actions.ts"
@@ -501,7 +765,9 @@
       },
       "layer": {
         "app/cities/page": "rsc",
+        "app/cost-types/page": "rsc",
         "app/employee-types/page": "rsc",
+        "app/general-costs/page": "rsc",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",

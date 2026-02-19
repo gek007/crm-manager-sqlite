@@ -819,3 +819,25 @@ It can also happen if the client has a browser extension installed which messes 
 [00:08:54.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:10:32.284] Server  LOG     ✓ Compiled in 59ms
 [00:10:46.060] Server  LOG     ✓ Compiled in 79ms
+[00:13:39.981] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:19.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:23.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:59.832] Server  LOG     ✓ Compiled in 84ms
+[00:19:46.455] Server  LOG     ✓ Compiled in 92ms
+[00:20:01.190] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:49.137] Server  LOG     ✓ Compiled in 76ms
+[00:21:02.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:30.913] Server  LOG     ✓ Compiled in 74ms
+[00:22:13.550] Server  LOG     ✓ Compiled in 67ms
+[00:24:06.538] Server  LOG     ✓ Compiled in 53ms
+[00:25:06.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:07.139] Server  LOG     ✓ Compiled in 64ms
+[00:26:36.461] Server  LOG     ✓ Compiled in 71ms
+[00:30:17.302] Server  LOG     ○ Compiling /cost-types/new ...
+[00:30:20.904] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:08.030] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:19.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:26.413] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:30.295] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:32.705] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:34.934] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
