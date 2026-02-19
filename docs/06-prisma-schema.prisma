@@ -1,0 +1,129 @@
+// This is your Prisma schema file for CRM Manager
+// Database: SQLite
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Project - Main entity for managing construction projects
+model Project {
+  id              Int       @id @default(autoincrement())
+  date            DateTime
+  projectName     String
+  cityId          Int
+  address         String
+  serviceTypeId   Int
+  floors          Int?
+  days            Int?
+  material        String?
+  gasFoodWater     Float     @default(0)
+  bama            Float     @default(0)
+  checker         Float     @default(0)
+  totalCost       Float     @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  // Relations
+  city            City        @relation(fields: [cityId], references: [id])
+  serviceType     ServiceType @relation(fields: [serviceTypeId], references: [id])
+  employeePrices  EmployeePrice[]
+
+  @@index([projectName])
+  @@index([date])
+  @@index([cityId])
+  @@map("projects")
+}
+
+// City - Cities where projects are located
+model City {
+  id        Int       @id @default(autoincrement())
+  city      String
+  region    String?
+  createdAt DateTime  @default(now())
+
+  // Relations
+  projects  Project[]
+
+  @@index([region])
+  @@map("cities")
+}
+
+// ServiceType - Types of services provided
+model ServiceType {
+  id          Int       @id @default(autoincrement())
+  description String
+  createdAt   DateTime  @default(now())
+
+  // Relations
+  projects    Project[]
+
+  @@map("service_types")
+}
+
+// EmployeeType - Types of employees with their daily rates
+model EmployeeType {
+  id          Int             @id @default(autoincrement())
+  description String
+  dayRate     Float
+  createdAt   DateTime        @default(now())
+
+  // Relations
+  employeePrices  EmployeePrice[]
+
+  @@map("employee_types")
+}
+
+// EmployeePrice - Employee costs per project
+model EmployeePrice {
+  id              Int       @id @default(autoincrement())
+  projectId       Int
+  employeeTypeId  Int
+  workDays        Int       @default(0)
+  totalPrice      Float     @default(0)
+  byPlan          Int       @default(1)  // 1 = by plan, 2 = by mistake
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  // Relations
+  project         Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  employeeType    EmployeeType @relation(fields: [employeeTypeId], references: [id])
+
+  @@index([projectId])
+  @@map("employee_prices")
+}
+
+// CostType - Types of general costs
+model CostType {
+  id          Int           @id @default(autoincrement())
+  description String
+  createdAt   DateTime      @default(now())
+
+  // Relations
+  generalCosts GeneralCost[]
+
+  @@map("cost_types")
+}
+
+// GeneralCost - General costs with date ranges
+model GeneralCost {
+  id          Int       @id @default(autoincrement())
+  costTypeId  Int
+  fromYear    Int
+  toYear      Int
+  fromDay     Int
+  toDay       Int
+  total       Float
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  costType    CostType  @relation(fields: [costTypeId], references: [id])
+
+  @@index([costTypeId])
+  @@map("general_costs")
+}

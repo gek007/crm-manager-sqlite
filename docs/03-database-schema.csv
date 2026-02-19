@@ -1,0 +1,53 @@
+Table Name,Column Name,Data Type,Required,Default,Description,Notes
+Project,project_id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+Project,date,DATE,Yes,,Project start date,
+Project,project_name,VARCHAR(200),Yes,,Name of the project,
+Project,city_id,INTEGER,Yes,FK,City reference,FK -> City.city_id
+Project,address,VARCHAR(500),Yes,,Project address,
+Project,service_type_id,INTEGER,Yes,FK,Service type reference,FK -> ServiceType.service_type_id
+Project,floors,INTEGER,No,,Number of floors,
+Project,days,INTEGER,No,,Expected work days,
+Project,material,VARCHAR(200),No,,Material type,
+Project,gas_food_water,DECIMAL(10,2),No,0.00,Gas/Food/Water cost,
+Project,bama,DECIMAL(10,2),No,0.00,Bama cost,
+Project,checker,DECIMAL(10,2),No,0.00,Checker cost,
+Project,total_cost,DECIMAL(12,2),No,0.00,Total project cost,Calculated field
+Project,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+Project,updated_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Last update timestamp,
+,,,,,,,,,,
+City,city_id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+City,city,VARCHAR(100),Yes,,City name,
+City,region,VARCHAR(100),No,,Region name,
+City,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+,,,,,,,,,,
+ServiceType,service_type_id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+ServiceType,description,VARCHAR(200),Yes,,Service description,
+ServiceType,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+,,,,,,,,,,
+EmployeeType,employee_type_id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+EmployeeType,description,VARCHAR(200),Yes,,Employee type description,
+EmployeeType,day_rate,DECIMAL(10,2),Yes,,Cost per day,
+EmployeeType,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+,,,,,,,,,,
+EmployeePrice,id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+EmployeePrice,project_id,INTEGER,Yes,FK,Project reference,FK -> Project.project_id
+EmployeePrice,employee_type_id,INTEGER,Yes,FK,Employee type reference,FK -> EmployeeType.employee_type_id
+EmployeePrice,work_days,INTEGER,No,0,Number of work days,
+EmployeePrice,total_price,DECIMAL(10,2),No,0.00,Total price,work_days * day_rate
+EmployeePrice,by_plan,INTEGER,Yes,1,By plan or by mistake,1 = by plan, 2 = by mistake
+EmployeePrice,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+EmployeePrice,updated_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Last update timestamp,
+,,,,,,,,,,
+GeneralCost,id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+GeneralCost,cost_type_id,INTEGER,Yes,FK,Cost type reference,FK -> CostType.cost_type_id
+GeneralCost,from_year,INTEGER,Yes,,Start year,
+GeneralCost,to_year,INTEGER,Yes,,End year,
+GeneralCost,from_day,INTEGER,Yes,,Start day,
+GeneralCost,to_day,INTEGER,Yes,,End day,
+GeneralCost,total,DECIMAL(10,2),Yes,,Total cost amount,
+GeneralCost,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
+GeneralCost,updated_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Last update timestamp,
+,,,,,,,,,,
+CostType,cost_type_id,INTEGER,Yes,AUTOINCREMENT,Primary Key,PK
+CostType,description,VARCHAR(200),Yes,,Cost type description,
+CostType,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
