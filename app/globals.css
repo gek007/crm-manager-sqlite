@@ -4,23 +4,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
-    --primary: 123 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 11%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 123 100% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 350 100% 60%;
+    /* Apple-style light theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 16%;
-    --input: 0 0% 11%;
-    --ring: 123 100% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 50%;
   }
 
   * {
@@ -33,30 +34,46 @@
   }
 }
 
-/* Neon glow effect */
-.neon-glow {
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+/* Apple-style modern card and page effects */
+.page-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    0 8px 24px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(10px);
 }
 
-.neon-glow-text {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+.modern-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
 }
 
-/* Custom scrollbar */
+.modern-card:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Apple-style scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #141414;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2A2A2A;
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00FF41;
+  background: rgba(0, 0, 0, 0.3);
 }

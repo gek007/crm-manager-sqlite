@@ -29,11 +29,11 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-border bg-card">
+    <aside className="w-64 flex-shrink-0 border-r border-black/5 bg-white/80 backdrop-blur-xl sticky top-0 h-screen">
       <div className="flex h-full flex-col">
         {/* Logo */}
-        <div className="flex h-16 items-center border-b border-border px-6">
-          <h1 className="text-xl font-bold text-primary neon-glow-text">
+        <div className="flex h-16 items-center border-b border-black/5 px-6">
+          <h1 className="text-xl font-bold text-black">
             CRM Manager
           </h1>
         </div>
@@ -51,10 +51,10 @@ export function Sidebar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-all",
+                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
                   isActive
-                    ? "bg-primary/10 text-primary neon-glow"
-                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    ? "bg-black text-white shadow-sm"
+                    : "text-gray-600 hover:bg-black/[0.04] hover:text-black"
                 )}
               >
                 <Icon className="h-5 w-5" />

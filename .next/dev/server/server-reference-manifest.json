@@ -43,12 +43,6 @@
           "exportedName": "createProject",
           "filename": "app/actions.ts"
         },
-        "app/projects/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/projects/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "createProject",
-          "filename": "app/actions.ts"
-        },
         "app/service-types/page": {
           "moduleId": "[project]/.next-internal/server/app/service-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -59,7 +53,6 @@
       "layer": {
         "app/cities/page": "rsc",
         "app/employee-types/page": "rsc",
-        "app/projects/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -212,12 +205,6 @@
     },
     "605cb7a0a94746df70b51b4950b2dce454ca5f92a2": {
       "workers": {
-        "app/cities/[id]/edit/page": {
-          "moduleId": "[project]/.next-internal/server/app/cities/[id]/edit/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "updateCity",
-          "filename": "app/actions.ts"
-        },
         "app/cities/page": {
           "moduleId": "[project]/.next-internal/server/app/cities/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -238,7 +225,6 @@
         }
       },
       "layer": {
-        "app/cities/[id]/edit/page": "action-browser",
         "app/cities/page": "rsc",
         "app/employee-types/page": "rsc",
         "app/service-types/page": "rsc"
@@ -306,12 +292,6 @@
     },
     "60aeac522491564e508a91d9800163202f37bd5237": {
       "workers": {
-        "app/cities/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/cities/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "createCity",
-          "filename": "app/actions.ts"
-        },
         "app/cities/page": {
           "moduleId": "[project]/.next-internal/server/app/cities/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -332,7 +312,6 @@
         }
       },
       "layer": {
-        "app/cities/new/page": "action-browser",
         "app/cities/page": "rsc",
         "app/employee-types/page": "rsc",
         "app/service-types/page": "rsc"
@@ -348,12 +327,6 @@
           "exportedName": "createEmployeeType",
           "filename": "app/actions.ts"
         },
-        "app/employee-types/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/employee-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "createEmployeeType",
-          "filename": "app/actions.ts"
-        },
         "app/employee-types/page": {
           "moduleId": "[project]/.next-internal/server/app/employee-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -369,7 +342,6 @@
       },
       "layer": {
         "app/cities/page": "rsc",
-        "app/employee-types/new/page": "action-browser",
         "app/employee-types/page": "rsc",
         "app/service-types/page": "rsc"
       },
@@ -419,12 +391,6 @@
           "exportedName": "createServiceType",
           "filename": "app/actions.ts"
         },
-        "app/service-types/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/service-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "createServiceType",
-          "filename": "app/actions.ts"
-        },
         "app/service-types/page": {
           "moduleId": "[project]/.next-internal/server/app/service-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -435,7 +401,6 @@
       "layer": {
         "app/cities/page": "rsc",
         "app/employee-types/page": "rsc",
-        "app/service-types/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",
@@ -484,12 +449,6 @@
           "exportedName": "updateProject",
           "filename": "app/actions.ts"
         },
-        "app/projects/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/projects/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "updateProject",
-          "filename": "app/actions.ts"
-        },
         "app/service-types/page": {
           "moduleId": "[project]/.next-internal/server/app/service-types/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -500,7 +459,6 @@
       "layer": {
         "app/cities/page": "rsc",
         "app/employee-types/page": "rsc",
-        "app/projects/new/page": "action-browser",
         "app/service-types/page": "rsc"
       },
       "filename": "app/actions.ts",

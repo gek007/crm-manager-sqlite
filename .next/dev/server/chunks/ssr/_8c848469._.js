@@ -18,10 +18,31 @@ const metadata = {
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
         lang: "en",
-        className: "dark",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
-            className: "min-h-screen bg-background text-foreground",
-            children: children
+            className: "min-h-screen bg-[#E8E8E8] text-foreground antialiased",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "min-h-screen border-x border-black/5 shadow-[0_0_0_1px_rgba(0,0,0,0.02),0_2px_8px_rgba(0,0,0,0.02),0_12px_24px_rgba(0,0,0,0.02)] mx-auto max-w-[1600px] flex relative overflow-hidden",
+                style: {
+                    backgroundImage: "url('/background.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 bg-white/60 backdrop-blur-[2px] -z-10"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 27,
+                        columnNumber: 11
+                    }, this),
+                    children
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/layout.tsx",
+                lineNumber: 17,
+                columnNumber: 9
+            }, this)
         }, void 0, false, {
             fileName: "[project]/app/layout.tsx",
             lineNumber: 16,

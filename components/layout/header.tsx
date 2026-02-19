@@ -13,9 +13,9 @@ interface HeaderProps {
 
 export function Header({ title, action }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-black/5 bg-white/90 backdrop-blur-xl px-8">
       <div className="flex flex-1 items-center justify-between">
-        <h1 className="text-xl font-semibold">{title}</h1>
+        <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
         {action && (
           <a href={action.href}>
             <Button>

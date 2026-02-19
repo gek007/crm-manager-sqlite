@@ -12,16 +12,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps & { asChild?: boo
     return (
       <button
         className={cn(
-          "inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-primary text-primary-foreground hover:bg-primary/90 neon-glow":
+            "bg-black text-white hover:bg-black/80 shadow-[0_1px_2px_rgba(0,0,0,0.1)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.15)]":
               variant === "primary",
-            "bg-secondary text-secondary-foreground hover:bg-secondary/80":
+            "bg-secondary text-secondary-foreground hover:bg-black/5":
               variant === "secondary",
-            "border border-border bg-transparent hover:bg-primary/10 text-foreground":
+            "border border-black/10 bg-transparent hover:bg-black/5 text-foreground":
               variant === "outline",
-            "hover:bg-primary/10 text-foreground": variant === "ghost",
-            "bg-destructive text-destructive-foreground hover:bg-destructive/90":
+            "hover:bg-black/5 text-foreground": variant === "ghost",
+            "bg-destructive text-white hover:bg-destructive/90":
               variant === "destructive",
           },
           {
