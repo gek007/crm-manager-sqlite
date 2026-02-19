@@ -1,8 +1,10 @@
 {
+  "/api/cities/[id]/route": "app/api/cities/[id]/route.js",
   "/api/cost-types/[id]/route": "app/api/cost-types/[id]/route.js",
   "/api/cost-types/route": "app/api/cost-types/route.js",
   "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
   "/api/general-costs/[id]/route": "app/api/general-costs/[id]/route.js",
+  "/cities/[id]/edit/page": "app/cities/[id]/edit/page.js",
   "/cities/page": "app/cities/page.js",
   "/cost-types/[id]/edit/page": "app/cost-types/[id]/edit/page.js",
   "/cost-types/new/page": "app/cost-types/new/page.js",
@@ -11,6 +13,7 @@
   "/general-costs/[id]/edit/page": "app/general-costs/[id]/edit/page.js",
   "/general-costs/page": "app/general-costs/page.js",
   "/page": "app/page.js",
+  "/projects/[id]/edit/page": "app/projects/[id]/edit/page.js",
   "/projects/[id]/page": "app/projects/[id]/page.js",
   "/projects/new/page": "app/projects/new/page.js",
   "/projects/page": "app/projects/page.js",
