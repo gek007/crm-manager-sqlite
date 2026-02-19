@@ -1,65 +1,91 @@
+"use client";
+
+import { useState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { prisma } from "@/lib/prisma";
-import { Building2, TrendingUp, CheckCircle, DollarSign } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Building2, TrendingUp, CheckCircle, DollarSign, FileSpreadsheet } from "lucide-react";
 
-async function getDashboardStats() {
-  const [
-    totalProjects,
-    activeProjects,
-    completedProjects,
-    totalRevenue,
-    recentProjects,
-  ] = await Promise.all([
-    prisma.project.count(),
-    prisma.project.count({ where: { days: { gt: 0 } } }),
-    prisma.project.count({ where: { days: { lte: 0 } } }),
-    prisma.project.aggregate({ _sum: { totalCost: true } }),
-    prisma.project.findMany({
-      take: 5,
-      orderBy: { createdAt: "desc" },
-      include: {
-        city: true,
-        serviceType: true,
-      },
-    }),
-  ]);
-
-  return {
-    totalProjects,
-    activeProjects,
-    completedProjects,
-    totalRevenue: totalRevenue._sum.totalCost || 0,
-    recentProjects,
-  };
+interface Project {
+  id: number;
+  projectName: string;
+  date: string;
+  city: { city: string };
+  serviceType: { description: string };
+  totalPaid: number;
 }
 
-export default async function DashboardPage() {
-  const stats = await getDashboardStats();
+interface DashboardStats {
+  totalProjects: number;
+  activeProjects: number;
+  completedProjects: number;
+  totalRevenue: number;
+  recentProjects: Project[];
+}
+
+async function getDashboardStats(): Promise<DashboardStats> {
+  const response = await fetch('/api/dashboard/stats');
+  if (!response.ok) {
+    throw new Error('Failed to fetch dashboard stats');
+  }
+  return response.json();
+}
+
+export default function DashboardPage() {
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [exporting, setExporting] = useState(false);
+  const [exportResult, setExportResult] = useState<{ success: boolean; message: string; filePath?: string; fileName?: string } | null>(null);
+
+  // Fetch stats on mount
+  useState(() => {
+    getDashboardStats()
+      .then(setStats)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  });
+
+  const handleExportToExcel = async () => {
+    setExporting(true);
+    setExportResult(null);
+
+    try {
+      const response = await fetch('/api/export/excel', {
+        method: 'POST',
+      });
+
+      const result = await response.json();
+      setExportResult(result);
+    } catch (error) {
+      setExportResult({ success: false, message: 'Failed to export to Excel' });
+    } finally {
+      setExporting(false);
+    }
+  };
 
   const statCards = [
     {
       title: "Total Projects",
-      value: stats.totalProjects,
+      value: stats?.totalProjects || 0,
       icon: Building2,
       color: "text-primary",
     },
     {
       title: "Active Projects",
-      value: stats.activeProjects,
+      value: stats?.activeProjects || 0,
       icon: TrendingUp,
       color: "text-primary",
     },
     {
       title: "Completed",
-      value: stats.completedProjects,
+      value: stats?.completedProjects || 0,
       icon: CheckCircle,
       color: "text-primary",
     },
     {
       title: "Total Revenue",
-      value: `$${stats.totalRevenue.toLocaleString()}`,
+      value: `$${(stats?.totalRevenue || 0).toLocaleString()}`,
       icon: DollarSign,
       color: "text-primary",
     },
@@ -67,9 +93,53 @@ export default async function DashboardPage() {
 
   return (
     <AppLayout>
-      <Header title="Dashboard" action={{ label: "New Project", href: "/projects/new" }} />
+      <Header
+        title="Dashboard"
+        action={{ label: "New Project", href: "/projects/new" }}
+      />
 
       <div className="p-6 space-y-6">
+        {/* Export Button */}
+        <Card className="border-border/50">
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <FileSpreadsheet className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Export to Excel</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Export all data from all tables to Excel format
+                  </p>
+                </div>
+              </div>
+              <Button
+                onClick={handleExportToExcel}
+                disabled={exporting || loading}
+                className="neon-glow"
+              >
+                {exporting ? "Exporting..." : "Convert to Excel"}
+              </Button>
+            </div>
+
+            {exportResult && (
+              <div className={`mt-4 p-3 rounded-lg ${exportResult.success ? 'bg-primary/10 text-primary' : 'bg-destructive/10 text-destructive'}`}>
+                {exportResult.success ? (
+                  <div className="text-sm">
+                    <p className="font-medium mb-1">{exportResult.message}</p>
+                    {exportResult.filePath && (
+                      <p className="text-xs">File saved to: <code className="bg-background px-1 rounded">{exportResult.filePath}</code></p>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm">{exportResult.message}</p>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {statCards.map((stat) => {
@@ -96,7 +166,9 @@ export default async function DashboardPage() {
             <CardTitle className="text-lg">Recent Projects</CardTitle>
           </CardHeader>
           <CardContent>
-            {stats.recentProjects.length === 0 ? (
+            {loading ? (
+              <p className="text-muted-foreground text-center py-8">Loading...</p>
+            ) : !stats || stats.recentProjects.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
                 No projects yet. Create your first project to get started.
               </p>
@@ -115,7 +187,7 @@ export default async function DashboardPage() {
                     </div>
                     <div className="text-right">
                       <p className="font-medium text-primary">
-                        ${project.totalCost.toLocaleString()}
+                        ${project.totalPaid.toLocaleString()}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {new Date(project.date).toLocaleDateString()}
@@ -129,7 +201,7 @@ export default async function DashboardPage() {
         </Card>
 
         {/* Welcome Card - Show when no projects */}
-        {stats.totalProjects === 0 && (
+        {stats && stats.totalProjects === 0 && (
           <Card className="border-primary/20 neon-glow">
             <CardHeader>
               <CardTitle className="text-xl">Welcome to CRM Manager</CardTitle>

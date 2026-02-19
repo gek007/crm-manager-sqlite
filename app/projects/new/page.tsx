@@ -25,13 +25,11 @@ export default async function NewProjectPage() {
     const gasFoodWater = formData.get("gasFoodWater") ? parseFloat(formData.get("gasFoodWater") as string) : 0;
     const bama = formData.get("bama") ? parseFloat(formData.get("bama") as string) : 0;
     const checker = formData.get("checker") ? parseFloat(formData.get("checker") as string) : 0;
+    const totalPaid = formData.get("totalPaid") ? parseFloat(formData.get("totalPaid") as string) : 0;
 
     if (!projectName || !date || !cityId || !address || !serviceTypeId) {
       return { error: "Required fields are missing" };
     }
-
-    // Calculate total cost
-    let totalCost = gasFoodWater + bama + checker;
 
     const project = await prisma.project.create({
       data: {
@@ -46,7 +44,7 @@ export default async function NewProjectPage() {
         gasFoodWater,
         bama,
         checker,
-        totalCost,
+        totalPaid,
       },
     });
 
@@ -76,17 +74,9 @@ export default async function NewProjectPage() {
               byPlan,
             },
           });
-
-          totalCost += totalPrice;
         }
       }
     }
-
-    // Update project total cost
-    await prisma.project.update({
-      where: { id: project.id },
-      data: { totalCost },
-    });
 
     redirect(`/projects/${project.id}`);
   }
@@ -265,7 +255,7 @@ export default async function NewProjectPage() {
                 {/* Costs */}
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-primary">Additional Costs</h3>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-4 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="gasFoodWater" className="text-sm font-medium">
                         Gas/Food/Water ($)
@@ -308,6 +298,22 @@ export default async function NewProjectPage() {
                         min="0"
                         defaultValue={0}
                         className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="totalPaid" className="text-sm font-medium">
+                        Total Paid ($) *
+                      </label>
+                      <input
+                        type="number"
+                        id="totalPaid"
+                        name="totalPaid"
+                        step="0.01"
+                        min="0"
+                        defaultValue={0}
+                        required
+                        className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring font-semibold"
                       />
                     </div>
                   </div>

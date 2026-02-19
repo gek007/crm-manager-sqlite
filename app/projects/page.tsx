@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { prisma } from "@/lib/prisma";
-import { Edit, Trash2, Eye } from "lucide-react";
+import { Edit, Eye } from "lucide-react";
+import { DeleteProjectButton } from "@/components/projects/delete-project-button";
 
 async function getProjects() {
   return prisma.project.findMany({
@@ -43,7 +44,7 @@ export default async function ProjectsPage() {
                     <TableHead>Service</TableHead>
                     <TableHead>Date</TableHead>
                     <TableHead>Days</TableHead>
-                    <TableHead>Total Cost</TableHead>
+                    <TableHead>Total Paid</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -57,7 +58,7 @@ export default async function ProjectsPage() {
                       <TableCell>{new Date(project.date).toLocaleDateString()}</TableCell>
                       <TableCell>{project.days || "-"}</TableCell>
                       <TableCell className="text-primary font-medium">
-                        ${project.totalCost.toLocaleString()}
+                        ${project.totalPaid.toLocaleString()}
                       </TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
@@ -71,9 +72,7 @@ export default async function ProjectsPage() {
                               <Edit className="h-4 w-4" />
                             </a>
                           </Button>
-                          <Button variant="ghost" size="sm" className="text-destructive">
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
+                          <DeleteProjectButton projectId={project.id} projectName={project.projectName} />
                         </div>
                       </TableCell>
                     </TableRow>

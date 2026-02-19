@@ -17,7 +17,10 @@
       "mcp__playwright__browser_take_screenshot",
       "Bash(npm uninstall:*)",
       "mcp__playwright__browser_click",
-      "mcp__playwright__browser_snapshot"
+      "mcp__playwright__browser_snapshot",
+      "Bash(npx tsc:*)",
+      "Bash(npx prisma db push:*)",
+      "Bash(npx prisma db execute:*)"
     ]
   }
 }

@@ -4,8 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
-import { ArrowLeft, Edit, Trash2, Plus } from "lucide-react";
+import { ArrowLeft, Edit, Plus } from "lucide-react";
 import { notFound } from "next/navigation";
+import { DeleteProjectButton } from "@/components/projects/delete-project-button";
 
 async function getProject(id: string) {
   const project = await prisma.project.findUnique({
@@ -26,9 +27,10 @@ async function getProject(id: string) {
 export default async function ProjectDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const project = await getProject(params.id);
+  const { id } = await params;
+  const project = await getProject(id);
 
   if (!project) {
     notFound();
@@ -53,9 +55,7 @@ export default async function ProjectDetailsPage({
               <Edit className="h-4 w-4" />
             </a>
           </Button>
-          <Button variant="destructive" size="sm">
-            <Trash2 className="h-4 w-4" />
-          </Button>
+          <DeleteProjectButton projectId={project.id} projectName={project.projectName} />
         </div>
       </div>
 
@@ -182,9 +182,9 @@ export default async function ProjectDetailsPage({
                 <span>${employeeCostsTotal.toLocaleString()}</span>
               </div>
               <div className="flex justify-between border-t border-border pt-3">
-                <span className="font-semibold text-lg">Total Project Cost</span>
+                <span className="font-semibold text-lg">Total Paid</span>
                 <span className="font-bold text-xl text-primary neon-glow-text">
-                  ${project.totalCost.toLocaleString()}
+                  ${project.totalPaid.toLocaleString()}
                 </span>
               </div>
             </div>

@@ -30,6 +30,11 @@ pnpm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Database
+*.db
+*.db-shm
+*.db-wal
+
 # Prisma
 /prisma/migrations/**/migration.sql
 prisma/migrations/*
@@ -47,3 +52,6 @@ Thumbs.db
 
 # Generated files
 /generated/prisma
+
+# Excel exports
+/excel

@@ -11,7 +11,7 @@ Project,material,VARCHAR(200),No,,Material type,
 Project,gas_food_water,DECIMAL(10,2),No,0.00,Gas/Food/Water cost,
 Project,bama,DECIMAL(10,2),No,0.00,Bama cost,
 Project,checker,DECIMAL(10,2),No,0.00,Checker cost,
-Project,total_cost,DECIMAL(12,2),No,0.00,Total project cost,Calculated field
+Project,total_paid,DECIMAL(12,2),No,0.00,Total amount paid,User-entered field
 Project,created_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Creation timestamp,
 Project,updated_at,TIMESTAMP,Yes,CURRENT_TIMESTAMP,Last update timestamp,
 ,,,,,,,,,,

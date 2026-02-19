@@ -24,7 +24,7 @@ model Project {
   gasFoodWater     Float     @default(0)
   bama            Float     @default(0)
   checker         Float     @default(0)
-  totalCost       Float     @default(0)
+  totalPaid       Float     @default(0)
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 
