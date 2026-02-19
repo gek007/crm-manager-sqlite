@@ -21,7 +21,8 @@
       "Bash(npx tsc:*)",
       "Bash(npx prisma db push:*)",
       "Bash(npx prisma db execute:*)",
-      "Bash(copy:*)"
+      "Bash(copy:*)",
+      "mcp__playwright__browser_install"
     ]
   }
 }

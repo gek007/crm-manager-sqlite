@@ -263,7 +263,7 @@ img, video {
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 10%;
-  --card: 0 0% 100%;
+  --card: 0 0% 90%;
   --card-foreground: 0 0% 10%;
   --primary: 0 0% 0%;
   --primary-foreground: 0 0% 100%;
@@ -275,7 +275,7 @@ img, video {
   --accent-foreground: 0 0% 10%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --border: 0 0% 90%;
+  --border: 0 0% 80%;
   --input: 0 0% 90%;
   --ring: 0 0% 50%;
 }
@@ -696,6 +696,18 @@ body {
   background-color: #ff3b30e6;
 }
 
+.bg-gray-200\/60 {
+  background-color: #e5e7eb99;
+}
+
+.bg-gray-200\/80 {
+  background-color: #e5e7ebcc;
+}
+
+.bg-gray-200\/90 {
+  background-color: #e5e7ebe6;
+}
+
 .bg-input {
   --tw-bg-opacity: 1;
   background-color: rgb(229 229 231 / var(--tw-bg-opacity, 1));
@@ -716,18 +728,6 @@ body {
 
 .bg-transparent {
   background-color: #0000;
-}
-
-.bg-white\/60 {
-  background-color: #fff9;
-}
-
-.bg-white\/80 {
-  background-color: #fffc;
-}
-
-.bg-white\/90 {
-  background-color: #ffffffe6;
 }
 
 .p-0 {
@@ -945,6 +945,41 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity, 1));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity, 1));
+}
+
+.text-orange-600 {
+  --tw-text-opacity: 1;
+  color: rgb(234 88 12 / var(--tw-text-opacity, 1));
+}
+
+.text-purple-600 {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity, 1));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity, 1));
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1038,6 +1073,73 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0000004d;
+}
+
+@keyframes rainbow-flow {
+  0% {
+    color: red;
+    text-shadow: 0 0 10px #f00c, 0 0 20px #f009, 0 0 30px #f006, 0 0 40px #ff00004d;
+  }
+
+  16% {
+    color: #ff0;
+    text-shadow: 0 0 10px #ff0c, 0 0 20px #ff09, 0 0 30px #ff06, 0 0 40px #ffff004d;
+  }
+
+  33% {
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0c, 0 0 20px #0f09, 0 0 30px #0f06, 0 0 40px #00ff004d;
+  }
+
+  50% {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ffc, 0 0 20px #0ff9, 0 0 30px #0ff6, 0 0 40px #00ffff4d;
+  }
+
+  66% {
+    color: #00f;
+    text-shadow: 0 0 10px #00fc, 0 0 20px #00f9, 0 0 30px #00f6, 0 0 40px #0000ff4d;
+  }
+
+  83% {
+    color: #f0f;
+    text-shadow: 0 0 10px #f0fc, 0 0 20px #f0f9, 0 0 30px #f0f6, 0 0 40px #ff00ff4d;
+  }
+
+  100% {
+    color: red;
+    text-shadow: 0 0 10px #f00c, 0 0 20px #f009, 0 0 30px #f006, 0 0 40px #ff00004d;
+  }
+}
+
+.rainbow-flow {
+  animation: 3s linear infinite rainbow-flow;
+}
+
+.title-3d {
+  color: #1a1a1a;
+  text-shadow: 1px 1px #ccc, 2px 2px #bbb, 3px 3px #aaa, 4px 4px #999, 5px 5px 6px #0006;
+  cursor: default;
+  transition: all .3s;
+}
+
+.title-3d:hover {
+  text-shadow: 2px 2px #ccc, 4px 4px #bbb, 6px 6px #aaa, 8px 8px #999, 10px 10px #888, 12px 12px 12px #0009;
+  transform: scale(1.05)translateX(-4px);
+}
+
+.nav-3d {
+  text-shadow: 1px 1px #999, 2px 2px #888, 3px 3px 2px #0000004d;
+  transition: all .3s;
+}
+
+.nav-3d:hover {
+  text-shadow: 2px 2px #777, 4px 4px #666, 6px 6px #555, 8px 8px 4px #00000080;
+  transform: scale(1.1)translateX(-2px);
+}
+
+.nav-3d-active {
+  text-shadow: 1px 1px #666, 2px 2px #555, 3px 3px #444, 4px 4px 3px #00000080;
 }
 
 .placeholder\:text-muted-foreground::placeholder {

@@ -7,7 +7,7 @@
     /* Apple-style light theme */
     --background: 0 0% 100%;
     --foreground: 0 0% 10%;
-    --card: 0 0% 100%;
+    --card: 0 0% 90%;
     --card-foreground: 0 0% 10%;
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
@@ -19,7 +19,7 @@
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
+    --border: 0 0% 80%;
     --input: 0 0% 90%;
     --ring: 0 0% 50%;
   }
@@ -76,4 +76,119 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Rainbow/RGB flow animation for active nav items */
+@keyframes rainbow-flow {
+  0% {
+    color: #ff0000;
+    text-shadow:
+      0 0 10px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.6),
+      0 0 30px rgba(255, 0, 0, 0.4),
+      0 0 40px rgba(255, 0, 0, 0.3);
+  }
+  16% {
+    color: #ffff00;
+    text-shadow:
+      0 0 10px rgba(255, 255, 0, 0.8),
+      0 0 20px rgba(255, 255, 0, 0.6),
+      0 0 30px rgba(255, 255, 0, 0.4),
+      0 0 40px rgba(255, 255, 0, 0.3);
+  }
+  33% {
+    color: #00ff00;
+    text-shadow:
+      0 0 10px rgba(0, 255, 0, 0.8),
+      0 0 20px rgba(0, 255, 0, 0.6),
+      0 0 30px rgba(0, 255, 0, 0.4),
+      0 0 40px rgba(0, 255, 0, 0.3);
+  }
+  50% {
+    color: #00ffff;
+    text-shadow:
+      0 0 10px rgba(0, 255, 255, 0.8),
+      0 0 20px rgba(0, 255, 255, 0.6),
+      0 0 30px rgba(0, 255, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.3);
+  }
+  66% {
+    color: #0000ff;
+    text-shadow:
+      0 0 10px rgba(0, 0, 255, 0.8),
+      0 0 20px rgba(0, 0, 255, 0.6),
+      0 0 30px rgba(0, 0, 255, 0.4),
+      0 0 40px rgba(0, 0, 255, 0.3);
+  }
+  83% {
+    color: #ff00ff;
+    text-shadow:
+      0 0 10px rgba(255, 0, 255, 0.8),
+      0 0 20px rgba(255, 0, 255, 0.6),
+      0 0 30px rgba(255, 0, 255, 0.4),
+      0 0 40px rgba(255, 0, 255, 0.3);
+  }
+  100% {
+    color: #ff0000;
+    text-shadow:
+      0 0 10px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.6),
+      0 0 30px rgba(255, 0, 0, 0.4),
+      0 0 40px rgba(255, 0, 0, 0.3);
+  }
+}
+
+.rainbow-flow {
+  animation: rainbow-flow 3s linear infinite;
+}
+
+/* 3D Pop/Shadow effect for page title */
+.title-3d {
+  color: #1a1a1a;
+  text-shadow:
+    1px 1px 0 #ccc,
+    2px 2px 0 #bbb,
+    3px 3px 0 #aaa,
+    4px 4px 0 #999,
+    5px 5px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.title-3d:hover {
+  text-shadow:
+    2px 2px 0 #ccc,
+    4px 4px 0 #bbb,
+    6px 6px 0 #aaa,
+    8px 8px 0 #999,
+    10px 10px 0 #888,
+    12px 12px 12px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05) translateX(-4px);
+}
+
+/* 3D Pop/Shadow effect for sidebar nav items */
+.nav-3d {
+  text-shadow:
+    1px 1px 0 #999,
+    2px 2px 0 #888,
+    3px 3px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-3d:hover {
+  text-shadow:
+    2px 2px 0 #777,
+    4px 4px 0 #666,
+    6px 6px 0 #555,
+    8px 8px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1) translateX(-2px);
+}
+
+/* 3D effect for active nav items */
+.nav-3d-active {
+  text-shadow:
+    1px 1px 0 #666,
+    2px 2px 0 #555,
+    3px 3px 0 #444,
+    4px 4px 3px rgba(0, 0, 0, 0.5);
 }

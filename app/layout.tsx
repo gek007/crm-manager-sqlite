@@ -24,7 +24,7 @@ export default function RootLayout({
           }}
         >
           {/* Semi-transparent overlay for readability */}
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] -z-10" />
+          <div className="absolute inset-0 bg-gray-200/60 backdrop-blur-[2px] -z-10" />
           {children}
         </div>
       </body>
