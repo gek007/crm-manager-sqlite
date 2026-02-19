@@ -1,8 +1,3 @@
 {
-  "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
-  "/cities/page": "app/cities/page.js",
-  "/employee-types/page": "app/employee-types/page.js",
-  "/page": "app/page.js",
-  "/projects/page": "app/projects/page.js",
-  "/service-types/page": "app/service-types/page.js"
+  "/projects/page": "app/projects/page.js"
 }
