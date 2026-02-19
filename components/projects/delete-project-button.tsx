@@ -13,10 +13,12 @@ interface DeleteProjectButtonProps {
 export function DeleteProjectButton({ projectId, projectName }: DeleteProjectButtonProps) {
   const [isDeleting, setIsDeleting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleDelete = async () => {
     setIsDeleting(true);
+    setError(null);
     try {
       const response = await fetch(`/api/projects/${projectId}`, {
         method: "DELETE",
@@ -26,13 +28,13 @@ export function DeleteProjectButton({ projectId, projectName }: DeleteProjectBut
         router.push("/projects");
         router.refresh();
       } else {
-        alert("Failed to delete project");
+        const data = await response.json().catch(() => null);
+        setError(data?.error || "Failed to delete project");
         setIsDeleting(false);
         setShowConfirm(false);
       }
-    } catch (error) {
-      console.error("Error deleting project:", error);
-      alert("Error deleting project");
+    } catch {
+      setError("Network error while deleting project");
       setIsDeleting(false);
       setShowConfirm(false);
     }
@@ -40,6 +42,11 @@ export function DeleteProjectButton({ projectId, projectName }: DeleteProjectBut
 
   return (
     <div className="relative">
+      {error && (
+        <div className="absolute bottom-full mb-2 right-0 w-64 rounded-lg border border-destructive/50 bg-destructive/10 px-3 py-2 text-xs text-destructive">
+          {error}
+        </div>
+      )}
       {!showConfirm ? (
         <Button
           variant="destructive"
@@ -54,7 +61,7 @@ export function DeleteProjectButton({ projectId, projectName }: DeleteProjectBut
           <Button
             variant="outline"
             size="sm"
-            onClick={() => setShowConfirm(false)}
+            onClick={() => { setShowConfirm(false); setError(null); }}
             disabled={isDeleting}
             className="bg-background"
           >

@@ -297,6 +297,10 @@ body {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -305,8 +309,16 @@ body {
   position: sticky;
 }
 
+.bottom-full {
+  bottom: 100%;
+}
+
 .left-0 {
   left: 0;
+}
+
+.right-0 {
+  right: 0;
 }
 
 .top-0 {
@@ -330,12 +342,28 @@ body {
   margin-bottom: .25rem;
 }
 
+.mb-2 {
+  margin-bottom: .5rem;
+}
+
+.ml-1 {
+  margin-left: .25rem;
+}
+
+.ml-2 {
+  margin-left: .5rem;
+}
+
 .ml-64 {
   margin-left: 16rem;
 }
 
 .ml-auto {
   margin-left: auto;
+}
+
+.mr-1 {
+  margin-right: .25rem;
 }
 
 .mr-2 {
@@ -454,6 +482,10 @@ body {
   flex: 1;
 }
 
+.shrink-0 {
+  flex-shrink: 0;
+}
+
 .caption-bottom {
   caption-side: bottom;
 }
@@ -500,6 +532,10 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-1 {
+  gap: .25rem;
 }
 
 .gap-2 {
@@ -733,6 +769,11 @@ body {
   padding-bottom: .625rem;
 }
 
+.py-3 {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -815,6 +856,10 @@ body {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {

@@ -1,25 +1,16 @@
+"use client";
+
+import { useActionState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/prisma";
-import { redirect } from "next/navigation";
+import { FormMessage } from "@/components/ui/form-message";
+import { createCostType } from "@/app/actions";
 
-export default async function NewCostTypePage() {
-  async function createCostType(formData: FormData) {
-    "use server";
-    const description = formData.get("description") as string;
-
-    if (!description) {
-      return { error: "Description is required" };
-    }
-
-    await prisma.costType.create({
-      data: { description },
-    });
-
-    redirect("/cost-types");
-  }
+export default function NewCostTypePage() {
+  const [state, formAction] = useActionState(createCostType, undefined);
 
   return (
     <AppLayout>
@@ -31,7 +22,9 @@ export default async function NewCostTypePage() {
             <CardTitle className="text-lg">New Cost Type</CardTitle>
           </CardHeader>
           <CardContent>
-            <form action={createCostType} className="space-y-4">
+            <form action={formAction} className="space-y-4">
+              <FormMessage message={state?.error} />
+
               <div className="space-y-2">
                 <label htmlFor="description" className="text-sm font-medium">
                   Description *
@@ -47,10 +40,10 @@ export default async function NewCostTypePage() {
               </div>
 
               <div className="flex gap-3 pt-4">
-                <Button type="submit">Save Cost Type</Button>
-                <Button type="button" variant="secondary" asChild>
-                  <a href="/cost-types">Cancel</a>
-                </Button>
+                <SubmitButton>Save Cost Type</SubmitButton>
+                <a href="/cost-types">
+                  <Button type="button" variant="secondary">Cancel</Button>
+                </a>
               </div>
             </form>
           </CardContent>

@@ -7,8 +7,8 @@ export interface ButtonProps
   size?: "sm" | "md" | "lg";
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "md", ...props }, ref) => {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps & { asChild?: boolean }>(
+  ({ className, variant = "primary", size = "md", asChild: _, ...props }, ref) => {
     return (
       <button
         className={cn(

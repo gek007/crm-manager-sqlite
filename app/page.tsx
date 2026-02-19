@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,13 +38,12 @@ export default function DashboardPage() {
   const [exporting, setExporting] = useState(false);
   const [exportResult, setExportResult] = useState<{ success: boolean; message: string; filePath?: string; fileName?: string } | null>(null);
 
-  // Fetch stats on mount
-  useState(() => {
+  useEffect(() => {
     getDashboardStats()
       .then(setStats)
       .catch(console.error)
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   const handleExportToExcel = async () => {
     setExporting(true);

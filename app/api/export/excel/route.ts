@@ -22,23 +22,27 @@ export async function POST() {
     // Create a new workbook
     const workbook = new ExcelJS.Workbook();
 
-    // Define all tables to export
-    const tables = [
-      { name: 'projects', model: prisma.project, include: { city: true, serviceType: true, employeePrices: { include: { employeeType: true } } } },
-      { name: 'cities', model: prisma.city },
-      { name: 'service_types', model: prisma.serviceType },
-      { name: 'employee_types', model: prisma.employeeType },
-      { name: 'employee_prices', model: prisma.employeePrice, include: { project: true, employeeType: true } },
-      { name: 'cost_types', model: prisma.costType },
-      { name: 'general_costs', model: prisma.generalCost, include: { costType: true } },
-    ];
+    // Fetch all data with explicit typed queries
+    const [projects, cities, serviceTypes, employeeTypes, employeePrices, costTypes, generalCosts] =
+      await Promise.all([
+        prisma.project.findMany({ include: { city: true, serviceType: true, employeePrices: { include: { employeeType: true } } } }),
+        prisma.city.findMany(),
+        prisma.serviceType.findMany(),
+        prisma.employeeType.findMany(),
+        prisma.employeePrice.findMany({ include: { project: true, employeeType: true } }),
+        prisma.costType.findMany(),
+        prisma.generalCost.findMany({ include: { costType: true } }),
+      ]);
 
-    // Fetch all data
-    const data: Record<string, any[]> = {};
-    for (const table of tables) {
-      // @ts-ignore - dynamic prisma model access
-      data[table.name] = await table.model.findMany({ include: table.include });
-    }
+    const data = {
+      projects,
+      cities,
+      service_types: serviceTypes,
+      employee_types: employeeTypes,
+      employee_prices: employeePrices,
+      cost_types: costTypes,
+      general_costs: generalCosts,
+    };
 
     // Create schema sheet
     const schemaSheet = workbook.addWorksheet('Schema');
@@ -135,7 +139,7 @@ export async function POST() {
       { header: 'Created At', key: 'createdAt', width: 20 },
     ];
 
-    data.projects.forEach((p: any) => {
+    data.projects.forEach((p) => {
       projectsSheet.addRow({
         id: p.id,
         projectName: p.projectName,
@@ -166,7 +170,7 @@ export async function POST() {
       { header: 'By Plan', key: 'byPlan', width: 12 },
     ];
 
-    data.employee_prices.forEach((ep: any) => {
+    data.employee_prices.forEach((ep) => {
       empPricesSheet.addRow({
         id: ep.id,
         project: ep.project?.projectName || '',
@@ -185,7 +189,7 @@ export async function POST() {
       { header: 'City', key: 'city', width: 25 },
       { header: 'Region', key: 'region', width: 25 },
     ];
-    data.cities.forEach((c: any) => {
+    data.cities.forEach((c) => {
       citiesSheet.addRow({ id: c.id, city: c.city, region: c.region || '' });
     });
 
@@ -195,7 +199,7 @@ export async function POST() {
       { header: 'ID', key: 'id', width: 10 },
       { header: 'Description', key: 'description', width: 40 },
     ];
-    data.service_types.forEach((st: any) => {
+    data.service_types.forEach((st) => {
       serviceTypesSheet.addRow({ id: st.id, description: st.description });
     });
 
@@ -206,7 +210,7 @@ export async function POST() {
       { header: 'Description', key: 'description', width: 40 },
       { header: 'Day Rate', key: 'dayRate', width: 15 },
     ];
-    data.employee_types.forEach((et: any) => {
+    data.employee_types.forEach((et) => {
       empTypesSheet.addRow({ id: et.id, description: et.description, dayRate: et.dayRate });
     });
 
@@ -216,7 +220,7 @@ export async function POST() {
       { header: 'ID', key: 'id', width: 10 },
       { header: 'Description', key: 'description', width: 40 },
     ];
-    data.cost_types.forEach((ct: any) => {
+    data.cost_types.forEach((ct) => {
       costTypesSheet.addRow({ id: ct.id, description: ct.description });
     });
 
@@ -231,7 +235,7 @@ export async function POST() {
       { header: 'To Day', key: 'toDay', width: 12 },
       { header: 'Total', key: 'total', width: 15 },
     ];
-    data.general_costs.forEach((gc: any) => {
+    data.general_costs.forEach((gc) => {
       generalCostsSheet.addRow({
         id: gc.id,
         costType: gc.costType?.description || '',
@@ -272,9 +276,15 @@ export async function POST() {
       message: 'Excel file created successfully',
       filePath: `excel/${dateFolder}/${fileName}`,
       fileName,
-      recordCounts: Object.fromEntries(
-        Object.entries(data).map(([key, value]) => [key, value.length])
-      ),
+      recordCounts: {
+        projects: data.projects.length,
+        cities: data.cities.length,
+        service_types: data.service_types.length,
+        employee_types: data.employee_types.length,
+        employee_prices: data.employee_prices.length,
+        cost_types: data.cost_types.length,
+        general_costs: data.general_costs.length,
+      },
     });
 
   } catch (error) {

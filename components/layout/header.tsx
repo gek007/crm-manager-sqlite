@@ -17,12 +17,12 @@ export function Header({ title, action }: HeaderProps) {
       <div className="flex flex-1 items-center justify-between">
         <h1 className="text-xl font-semibold">{title}</h1>
         {action && (
-          <Button asChild>
-            <a href={action.href}>
+          <a href={action.href}>
+            <Button>
               <Plus className="mr-2 h-4 w-4" />
               {action.label}
-            </a>
-          </Button>
+            </Button>
+          </a>
         )}
       </div>
     </header>

@@ -1,26 +1,16 @@
+"use client";
+
+import { useActionState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/prisma";
-import { redirect } from "next/navigation";
+import { FormMessage } from "@/components/ui/form-message";
+import { createCity } from "@/app/actions";
 
-export default async function NewCityPage() {
-  async function createCity(formData: FormData) {
-    "use server";
-    const city = formData.get("city") as string;
-    const region = formData.get("region") as string;
-
-    if (!city) {
-      return { error: "City name is required" };
-    }
-
-    await prisma.city.create({
-      data: { city, region: region || null },
-    });
-
-    redirect("/cities");
-  }
+export default function NewCityPage() {
+  const [state, formAction] = useActionState(createCity, undefined);
 
   return (
     <AppLayout>
@@ -32,7 +22,9 @@ export default async function NewCityPage() {
             <CardTitle className="text-lg">New City</CardTitle>
           </CardHeader>
           <CardContent>
-            <form action={createCity} className="space-y-4">
+            <form action={formAction} className="space-y-4">
+              <FormMessage message={state?.error} />
+
               <div className="space-y-2">
                 <label htmlFor="city" className="text-sm font-medium">
                   City Name *
@@ -61,10 +53,10 @@ export default async function NewCityPage() {
               </div>
 
               <div className="flex gap-3 pt-4">
-                <Button type="submit">Save City</Button>
-                <Button type="button" variant="secondary" asChild>
-                  <a href="/cities">Cancel</a>
-                </Button>
+                <SubmitButton>Save City</SubmitButton>
+                <a href="/cities">
+                  <Button type="button" variant="secondary">Cancel</Button>
+                </a>
               </div>
             </form>
           </CardContent>

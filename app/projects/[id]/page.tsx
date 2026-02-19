@@ -38,23 +38,22 @@ export default async function ProjectDetailsPage({
 
   // Calculate employee costs total
   const employeeCostsTotal = project.employeePrices.reduce((sum, ep) => sum + ep.totalPrice, 0);
-  const otherCostsTotal = project.gasFoodWater + project.bama + project.checker;
 
   return (
     <AppLayout>
       <div className="flex items-center gap-4 px-6 py-4 border-b border-border">
-        <Button variant="ghost" size="sm" asChild>
-          <a href="/projects">
+        <a href="/projects">
+          <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4" />
-          </a>
-        </Button>
+          </Button>
+        </a>
         <h1 className="text-xl font-semibold">{project.projectName}</h1>
         <div className="ml-auto flex gap-2">
-          <Button variant="secondary" size="sm" asChild>
-            <a href={`/projects/${project.id}/edit`}>
+          <a href={`/projects/${project.id}/edit`}>
+            <Button variant="secondary" size="sm">
               <Edit className="h-4 w-4" />
-            </a>
-          </Button>
+            </Button>
+          </a>
           <DeleteProjectButton projectId={project.id} projectName={project.projectName} />
         </div>
       </div>
@@ -109,12 +108,12 @@ export default async function ProjectDetailsPage({
         <Card className="border-border/50">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-lg text-primary">Employee Prices</CardTitle>
-            <Button size="sm" asChild>
-              <a href={`/projects/${project.id}/employee-prices/new`}>
+            <a href={`/projects/${project.id}/employee-prices/new`}>
+              <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Employee Price
-              </a>
-            </Button>
+              </Button>
+            </a>
           </CardHeader>
           <CardContent>
             {project.employeePrices.length === 0 ? (

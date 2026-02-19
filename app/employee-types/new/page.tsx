@@ -1,29 +1,16 @@
+"use client";
+
+import { useActionState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/prisma";
-import { redirect } from "next/navigation";
+import { FormMessage } from "@/components/ui/form-message";
+import { createEmployeeType } from "@/app/actions";
 
-export default async function NewEmployeeTypePage() {
-  async function createEmployeeType(formData: FormData) {
-    "use server";
-    const description = formData.get("description") as string;
-    const dayRate = formData.get("dayRate") as string;
-
-    if (!description || !dayRate) {
-      return { error: "All fields are required" };
-    }
-
-    await prisma.employeeType.create({
-      data: {
-        description,
-        dayRate: parseFloat(dayRate),
-      },
-    });
-
-    redirect("/employee-types");
-  }
+export default function NewEmployeeTypePage() {
+  const [state, formAction] = useActionState(createEmployeeType, undefined);
 
   return (
     <AppLayout>
@@ -35,7 +22,9 @@ export default async function NewEmployeeTypePage() {
             <CardTitle className="text-lg">New Employee Type</CardTitle>
           </CardHeader>
           <CardContent>
-            <form action={createEmployeeType} className="space-y-4">
+            <form action={formAction} className="space-y-4">
+              <FormMessage message={state?.error} />
+
               <div className="space-y-2">
                 <label htmlFor="description" className="text-sm font-medium">
                   Description *
@@ -67,10 +56,10 @@ export default async function NewEmployeeTypePage() {
               </div>
 
               <div className="flex gap-3 pt-4">
-                <Button type="submit">Save Employee Type</Button>
-                <Button type="button" variant="secondary" asChild>
-                  <a href="/employee-types">Cancel</a>
-                </Button>
+                <SubmitButton>Save Employee Type</SubmitButton>
+                <a href="/employee-types">
+                  <Button type="button" variant="secondary">Cancel</Button>
+                </a>
               </div>
             </form>
           </CardContent>

@@ -1,16 +1,438 @@
-[00:00:01.664] Server  LOG     ✓ Ready in 1181ms
-[00:00:04.762] Server  LOG     ○ Compiling / ...
-[00:00:05.697] Server  ERROR   React does not recognize the `asChild` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `aschild` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-[00:00:05.781] Server  ERROR   TypeError: Failed to parse URL from /api/dashboard/stats
-[00:00:06.041] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.188] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
-[00:00:09.592] Server  ERROR   TypeError: Failed to parse URL from /api/dashboard/stats
-[00:00:09.782] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.954] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
-[00:00:09.954] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:00:13.419] Server  ERROR   TypeError: Failed to parse URL from /api/dashboard/stats
-[00:00:13.746] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.891] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
-[00:00:37.457] Server  ERROR   TypeError: Failed to parse URL from /api/dashboard/stats
-[00:00:37.676] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:37.820] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
+[00:00:07.948] Server  LOG     ✓ Ready in 6s
+[00:00:10.996] Server  LOG     ○ Compiling / ...
+[00:00:20.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.602] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="page.tsx">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                <DashboardPage params={Promise} searchParams={Promise}>
+                  <AppLayout>
+                    <div className="min-h-scre...">
+                      <Sidebar>
+                        <aside className="fixed left...">
+                          <div className="flex h-ful...">
+                            <div>
+                            <nav className="flex-1 spa...">
+                              <LinkComponent>
+                              <LinkComponent href="/projects" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/projects"
+-                                 data-cursor-ref="e1"
+                                >
+                              <LinkComponent href="/cities" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/cities"
+-                                 data-cursor-ref="e2"
+                                >
+                              <LinkComponent href="/service-t..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/service-types"
+-                                 data-cursor-ref="e3"
+                                >
+                              <LinkComponent href="/employee-..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/employee-types"
+-                                 data-cursor-ref="e4"
+                                >
+                              <LinkComponent href="/cost-types" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/cost-types"
+-                                 data-cursor-ref="e5"
+                                >
+                              <LinkComponent href="/general-c..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/general-costs"
+-                                 data-cursor-ref="e6"
+                                >
+                              <LinkComponent href="/settings" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/settings"
+-                                 data-cursor-ref="e7"
+                                >
+                      <main className="ml-64">
+                        <Header title="Dashboard" action={{label:"New...", ...}}>
+                          <header className="sticky top...">
+                            <div className="flex flex-...">
+                              <h1
+                                className="text-xl font-semibold"
+-                               data-cursor-ref="e12"
+                              >
++                               Dashboard
+                              <a
+                                href="/projects/new"
+-                               data-cursor-ref="e8"
+                              >
+                                <_c>
+                                  <button
+                                    className="inline-flex items-center justify-center rounded-md font-medium transiti..."
+                                    ref={null}
+-                                   data-cursor-ref="e9"
+                                  >
+                        <div className="p-6 space-y-6">
+                          ...
+                            <div ref={null} className="p-6 pt-6">
+                              <div className="flex items...">
+                                <div className="flex items...">
+                                  <div>
+                                  <div>
+                                    <h3
+                                      className="font-semibold"
+-                                     data-cursor-ref="e13"
+                                    >
++                                     Export to Excel
+                                    <p
+                                      className="text-sm text-muted-foreground"
+-                                     data-cursor-ref="e14"
+                                    >
++                                     Export all data from all tables to Excel format
+                                <_c onClick={function handleExportToExcel} disabled={true} className="neon-glow">
+                                  <button
+                                    className="inline-flex items-center justify-center rounded-md font-medium transiti..."
+                                    ref={null}
+                                    onClick={function handleExportToExcel}
+                                    disabled={true}
+-                                   data-cursor-ref="e10"
+                                  >
++                                   Convert to Excel
+                          <div className="grid grid-...">
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e15"
+                                    >
++                                     Total Projects
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e16"
+                                    >
++                                     Active Projects
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e17"
+                                    >
++                                     Completed
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e18"
+                                    >
++                                     Total Revenue
+                                  ...
+                          <_c className="border-bor...">
+                            <div ref={null} className="rounded-lg...">
+                              <_c2>
+                                <div ref={null} className="flex flex-...">
+                                  <_c4 className="text-lg">
+                                    <h3
+                                      ref={null}
+                                      className="font-semibold tracking-tight text-lg"
+-                                     data-cursor-ref="e19"
+                                    >
++                                     Recent Projects
+                              <_c8>
+                                <div ref={null} className="p-6 pt-0">
+                                  <p
+                                    className="text-muted-foreground text-center py-8"
+-                                   data-cursor-ref="e20"
+                                  >
++                                   Loading...
+            ...
+          ...
+
+[00:00:51.257] Server  LOG     ○ Compiling /cities ...
+[00:01:12.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:49.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:36.543] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:07.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:44.254] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:38.506] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
+[00:04:58.951] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:59.195] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="page.tsx">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                <DashboardPage params={Promise} searchParams={Promise}>
+                  <AppLayout>
+                    <div className="min-h-scre...">
+                      <Sidebar>
+                        <aside className="fixed left...">
+                          <div className="flex h-ful...">
+                            <div>
+                            <nav className="flex-1 spa...">
+                              <LinkComponent>
+                              <LinkComponent href="/projects" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/projects"
+-                                 data-cursor-ref="e1"
+                                >
+                              <LinkComponent href="/cities" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/cities"
+-                                 data-cursor-ref="e2"
+                                >
+                              <LinkComponent href="/service-t..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/service-types"
+-                                 data-cursor-ref="e3"
+                                >
+                              <LinkComponent href="/employee-..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/employee-types"
+-                                 data-cursor-ref="e4"
+                                >
+                              <LinkComponent href="/cost-types" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/cost-types"
+-                                 data-cursor-ref="e5"
+                                >
+                              <LinkComponent href="/general-c..." className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/general-costs"
+-                                 data-cursor-ref="e6"
+                                >
+                              <LinkComponent href="/settings" className="flex items...">
+                                <a
+                                  className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transi..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/settings"
+-                                 data-cursor-ref="e7"
+                                >
+                      <main className="ml-64">
+                        <Header title="Dashboard" action={{label:"New...", ...}}>
+                          <header className="sticky top...">
+                            <div className="flex flex-...">
+                              <h1
+                                className="text-xl font-semibold"
+-                               data-cursor-ref="e12"
+                              >
++                               Dashboard
+                              <a
+                                href="/projects/new"
+-                               data-cursor-ref="e8"
+                              >
+                                <_c>
+                                  <button
+                                    className="inline-flex items-center justify-center rounded-md font-medium transiti..."
+                                    ref={null}
+-                                   data-cursor-ref="e9"
+                                  >
+                        <div className="p-6 space-y-6">
+                          ...
+                            <div ref={null} className="p-6 pt-6">
+                              <div className="flex items...">
+                                <div className="flex items...">
+                                  <div>
+                                  <div>
+                                    <h3
+                                      className="font-semibold"
+-                                     data-cursor-ref="e13"
+                                    >
++                                     Export to Excel
+                                    <p
+                                      className="text-sm text-muted-foreground"
+-                                     data-cursor-ref="e14"
+                                    >
++                                     Export all data from all tables to Excel format
+                                <_c onClick={function handleExportToExcel} disabled={true} className="neon-glow">
+                                  <button
+                                    className="inline-flex items-center justify-center rounded-md font-medium transiti..."
+                                    ref={null}
+                                    onClick={function handleExportToExcel}
+                                    disabled={true}
+-                                   data-cursor-ref="e10"
+                                  >
++                                   Convert to Excel
+                          <div className="grid grid-...">
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e15"
+                                    >
++                                     Total Projects
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e16"
+                                    >
++                                     Active Projects
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e17"
+                                    >
++                                     Completed
+                                  ...
+                            ...
+                              <_c2 className="flex flex-...">
+                                <div ref={null} className="space-y-1....">
+                                  <_c4 className="text-sm fo...">
+                                    <h3
+                                      ref={null}
+                                      className="tracking-tight text-sm font-medium text-muted-foreground"
+-                                     data-cursor-ref="e18"
+                                    >
++                                     Total Revenue
+                                  ...
+                          <_c className="border-bor...">
+                            <div ref={null} className="rounded-lg...">
+                              <_c2>
+                                <div ref={null} className="flex flex-...">
+                                  <_c4 className="text-lg">
+                                    <h3
+                                      ref={null}
+                                      className="font-semibold tracking-tight text-lg"
+-                                     data-cursor-ref="e19"
+                                    >
++                                     Recent Projects
+                              <_c8>
+                                <div ref={null} className="p-6 pt-0">
+                                  <p
+                                    className="text-muted-foreground text-center py-8"
+-                                   data-cursor-ref="e20"
+                                  >
++                                   Loading...
+            ...
+          ...
+
+[00:05:24.800] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:47.900] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:50.101] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild
+[00:09:14.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:11.332] Server  LOG     ✓ Compiled in 1164ms
+[00:10:23.598] Server  LOG     ✓ Compiled in 66ms
+[00:11:10.128] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

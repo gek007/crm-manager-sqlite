@@ -1,5 +1,16 @@
 {
+  "/api/cities/[id]/route": "app/api/cities/[id]/route.js",
   "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
+  "/api/export/excel/route": "app/api/export/excel/route.js",
+  "/cities/[id]/edit/page": "app/cities/[id]/edit/page.js",
+  "/cities/new/page": "app/cities/new/page.js",
+  "/cities/page": "app/cities/page.js",
+  "/employee-types/new/page": "app/employee-types/new/page.js",
+  "/employee-types/page": "app/employee-types/page.js",
   "/page": "app/page.js",
-  "/projects/page": "app/projects/page.js"
+  "/projects/[id]/page": "app/projects/[id]/page.js",
+  "/projects/new/page": "app/projects/new/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/service-types/new/page": "app/service-types/new/page.js",
+  "/service-types/page": "app/service-types/page.js"
 }

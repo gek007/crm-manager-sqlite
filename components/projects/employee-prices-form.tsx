@@ -18,10 +18,17 @@ interface EmployeePriceEntry {
 
 interface EmployeePricesFormProps {
   employeeTypes: EmployeeType[];
+  initialEntries?: { employeeTypeId: number; workDays: number; byPlan: number }[];
 }
 
-export function EmployeePricesForm({ employeeTypes }: EmployeePricesFormProps) {
-  const [entries, setEntries] = useState<EmployeePriceEntry[]>([]);
+export function EmployeePricesForm({ employeeTypes, initialEntries }: EmployeePricesFormProps) {
+  const [entries, setEntries] = useState<EmployeePriceEntry[]>(
+    initialEntries?.map((e) => ({
+      employeeTypeId: e.employeeTypeId,
+      workDays: e.workDays,
+      byPlan: e.byPlan as 1 | 2,
+    })) ?? []
+  );
 
   const addEntry = () => {
     setEntries([...entries, { employeeTypeId: employeeTypes[0]?.id || 0, workDays: 0, byPlan: 1 }]);
