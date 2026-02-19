@@ -1,0 +1,20 @@
+{
+  "node": {
+    "40d6796ceea2bc66c88e4624b6ff0dafa26c75e0b7": {
+      "workers": {
+        "app/employee-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/employee-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/employee-types/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/employee-types/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/employee-types/new/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "app/employee-types/new/page.tsx"
+    }
+  },
+  "edge": {}
+}

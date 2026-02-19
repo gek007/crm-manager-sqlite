@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app:*)",
+      "Bash(venvScriptspython:*)",
+      "Bash(./venv/Scripts/python.exe:*)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma init:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(npx prisma migrate dev:*)",
+      "Bash(npx tailwindcss init:*)",
+      "Bash(./node_modules/.bin/tailwindcss:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx prisma migrate:*)",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(npm uninstall:*)",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_snapshot"
+    ]
+  }
+}

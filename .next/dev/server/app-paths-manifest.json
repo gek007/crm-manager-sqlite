@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/cities/new/page": "app/cities/new/page.js",
+  "/cities/page": "app/cities/page.js",
+  "/cost-types/new/page": "app/cost-types/new/page.js",
+  "/cost-types/page": "app/cost-types/page.js",
+  "/employee-types/new/page": "app/employee-types/new/page.js",
+  "/employee-types/page": "app/employee-types/page.js",
+  "/general-costs/new/page": "app/general-costs/new/page.js",
+  "/general-costs/page": "app/general-costs/page.js",
+  "/page": "app/page.js",
+  "/projects/new/page": "app/projects/new/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/service-types/new/page": "app/service-types/new/page.js",
+  "/service-types/page": "app/service-types/page.js",
+  "/settings/page": "app/settings/page.js"
+}

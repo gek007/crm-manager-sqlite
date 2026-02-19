@@ -1,0 +1,96 @@
+{
+  "node": {
+    "4012c2c3a5decc559eedbc3e8e77fb2f286618da51": {
+      "workers": {
+        "app/projects/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/projects/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/projects/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/projects/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/projects/new/page": "rsc"
+      },
+      "filename": "app/projects/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "40facb9016d0ef84b400bb4da8724335d8ef144e1d": {
+      "workers": {
+        "app/cities/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/cities/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/cities/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/cities/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/cities/new/page": "rsc"
+      },
+      "filename": "app/cities/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "40f216b2c133cbf3fdaf38b34071a60490597cb41a": {
+      "workers": {
+        "app/service-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/service-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/service-types/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/service-types/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/service-types/new/page": "rsc"
+      },
+      "filename": "app/service-types/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "40d6796ceea2bc66c88e4624b6ff0dafa26c75e0b7": {
+      "workers": {
+        "app/employee-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/employee-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/employee-types/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/employee-types/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/employee-types/new/page": "rsc"
+      },
+      "filename": "app/employee-types/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "409887f53e9209d838e3248d0454d5cf68aa125c24": {
+      "workers": {
+        "app/cost-types/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/cost-types/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/cost-types/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/cost-types/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/cost-types/new/page": "rsc"
+      },
+      "filename": "app/cost-types/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "405cc39e8a36cbb6d27e22b8128c0b274e32dd0fa7": {
+      "workers": {
+        "app/general-costs/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/general-costs/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/general-costs/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/general-costs/new/page": "rsc"
+      },
+      "filename": "app/general-costs/new/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "/fQQRdDRjCTBevU5vsj1cBDqpRYcxh+cryLwgtoRU4c="
+}

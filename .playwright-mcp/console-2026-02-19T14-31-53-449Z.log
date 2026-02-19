@@ -1,0 +1,139 @@
+[     315ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  103767ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  115338ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  131401ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  138592ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/projects/new:0
+[  141167ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  166170ms] [ERROR] React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. asChild aschild @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  297304ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  299076ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  302335ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  305113ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  305601ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[  306838ms] [ERROR] ./app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[root-of-the-server]__51225daf._.js
+- G:\__VSCode\crm-manager\.next\dev\build\chunks\[turbopack]_runtime.js
+- G:\__VSCode\crm-manager\.next\dev\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1410:15)]
+    [at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)]
+    [at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)]
+    [at Module._load (node:internal/modules/cjs/loader:1219:37)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:322:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1493:12)]
+    [at require (node:internal/modules/helpers:152:16)]
+    [at <anonymous> (turbopack:///[turbopack-node]/transforms/postcss.ts:49:25)]
+    [at <anonymous>]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127

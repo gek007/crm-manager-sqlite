@@ -1,0 +1,20 @@
+{
+  "node": {
+    "405cc39e8a36cbb6d27e22b8128c0b274e32dd0fa7": {
+      "workers": {
+        "app/general-costs/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/general-costs/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/general-costs/new/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "app/general-costs/new/page.tsx"
+        }
+      },
+      "layer": {
+        "app/general-costs/new/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "app/general-costs/new/page.tsx"
+    }
+  },
+  "edge": {}
+}
