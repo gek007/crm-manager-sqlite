@@ -1,27 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Apple-style light theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --card: 0 0% 90%;
-    --card-foreground: 0 0% 10%;
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 50%;
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 10%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 80%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 50%;
+    --background: 222 18% 6%;
+    --foreground: 210 20% 94%;
+    --card: 222 16% 10%;
+    --card-foreground: 210 20% 94%;
+    --primary: 38 65% 55%;
+    --primary-foreground: 222 18% 6%;
+    --secondary: 222 14% 13%;
+    --secondary-foreground: 210 20% 80%;
+    --muted: 222 14% 13%;
+    --muted-foreground: 215 12% 45%;
+    --accent: 38 65% 55%;
+    --accent-foreground: 222 18% 6%;
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 210 20% 94%;
+    --border: 222 14% 14%;
+    --input: 222 16% 12%;
+    --ring: 38 65% 55%;
   }
 
   * {
@@ -30,165 +31,106 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Syne', -apple-system, sans-serif;
+    background-color: #0c0e14;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 10% 10%, rgba(212, 165, 71, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, rgba(80, 120, 170, 0.03) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    min-height: 100vh;
   }
 }
 
-/* Apple-style modern card and page effects */
-.page-card {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 4px 12px rgba(0, 0, 0, 0.03),
-    0 8px 24px rgba(0, 0, 0, 0.02);
-  backdrop-filter: blur(10px);
-}
-
-.modern-card {
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 2px 8px rgba(0, 0, 0, 0.02);
-  transition: all 0.2s ease;
-}
-
-.modern-card:hover {
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.06),
-    0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-/* Apple-style scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  background: rgba(212, 165, 71, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 71, 0.35); }
+
+/* ── Mono numbers ────────────────────────────────────────── */
+.mono { font-family: 'DM Mono', monospace; }
+
+/* ── Amber glow effect ───────────────────────────────────── */
+.amber-glow {
+  box-shadow: 0 0 0 1px rgba(212, 165, 71, 0.3), 0 0 20px rgba(212, 165, 71, 0.1);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
+/* ── Card glass ──────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Rainbow/RGB flow animation for active nav items */
-@keyframes rainbow-flow {
-  0% {
-    color: #ff0000;
-    text-shadow:
-      0 0 10px rgba(255, 0, 0, 0.8),
-      0 0 20px rgba(255, 0, 0, 0.6),
-      0 0 30px rgba(255, 0, 0, 0.4),
-      0 0 40px rgba(255, 0, 0, 0.3);
-  }
-  16% {
-    color: #ffff00;
-    text-shadow:
-      0 0 10px rgba(255, 255, 0, 0.8),
-      0 0 20px rgba(255, 255, 0, 0.6),
-      0 0 30px rgba(255, 255, 0, 0.4),
-      0 0 40px rgba(255, 255, 0, 0.3);
-  }
-  33% {
-    color: #00ff00;
-    text-shadow:
-      0 0 10px rgba(0, 255, 0, 0.8),
-      0 0 20px rgba(0, 255, 0, 0.6),
-      0 0 30px rgba(0, 255, 0, 0.4),
-      0 0 40px rgba(0, 255, 0, 0.3);
-  }
-  50% {
-    color: #00ffff;
-    text-shadow:
-      0 0 10px rgba(0, 255, 255, 0.8),
-      0 0 20px rgba(0, 255, 255, 0.6),
-      0 0 30px rgba(0, 255, 255, 0.4),
-      0 0 40px rgba(0, 255, 255, 0.3);
-  }
-  66% {
-    color: #0000ff;
-    text-shadow:
-      0 0 10px rgba(0, 0, 255, 0.8),
-      0 0 20px rgba(0, 0, 255, 0.6),
-      0 0 30px rgba(0, 0, 255, 0.4),
-      0 0 40px rgba(0, 0, 255, 0.3);
-  }
-  83% {
-    color: #ff00ff;
-    text-shadow:
-      0 0 10px rgba(255, 0, 255, 0.8),
-      0 0 20px rgba(255, 0, 255, 0.6),
-      0 0 30px rgba(255, 0, 255, 0.4),
-      0 0 40px rgba(255, 0, 255, 0.3);
-  }
-  100% {
-    color: #ff0000;
-    text-shadow:
-      0 0 10px rgba(255, 0, 0, 0.8),
-      0 0 20px rgba(255, 0, 0, 0.6),
-      0 0 30px rgba(255, 0, 0, 0.4),
-      0 0 40px rgba(255, 0, 0, 0.3);
-  }
+/* ── Sidebar active indicator ────────────────────────────── */
+.nav-active {
+  background: rgba(212, 165, 71, 0.1);
+  border-left: 2px solid #d4a547;
+  color: #d4a547;
+}
+.nav-item {
+  border-left: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: rgba(212, 165, 71, 0.3);
 }
 
-.rainbow-flow {
-  animation: rainbow-flow 3s linear infinite;
+/* ── Page enter animation ────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.4s ease forwards;
+}
+.fade-up-1 { animation-delay: 0.05s; opacity: 0; }
+.fade-up-2 { animation-delay: 0.1s;  opacity: 0; }
+.fade-up-3 { animation-delay: 0.15s; opacity: 0; }
+.fade-up-4 { animation-delay: 0.2s;  opacity: 0; }
+
+/* ── Shimmer for stat values ─────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.stat-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0e9d8 0%,
+    #d4a547 40%,
+    #f0e9d8 60%,
+    #d4a547 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* 3D Pop/Shadow effect for page title */
-.title-3d {
-  color: #1a1a1a;
-  text-shadow:
-    1px 1px 0 #ccc,
-    2px 2px 0 #bbb,
-    3px 3px 0 #aaa,
-    4px 4px 0 #999,
-    5px 5px 6px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  cursor: default;
+/* ── Input focus amber ───────────────────────────────────── */
+.input-amber:focus {
+  outline: none;
+  border-color: rgba(212, 165, 71, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 165, 71, 0.08);
 }
 
-.title-3d:hover {
-  text-shadow:
-    2px 2px 0 #ccc,
-    4px 4px 0 #bbb,
-    6px 6px 0 #aaa,
-    8px 8px 0 #999,
-    10px 10px 0 #888,
-    12px 12px 12px rgba(0, 0, 0, 0.6);
-  transform: scale(1.05) translateX(-4px);
+/* ── Table row hover ─────────────────────────────────────── */
+.table-row-hover:hover {
+  background: rgba(212, 165, 71, 0.03);
 }
 
-/* 3D Pop/Shadow effect for sidebar nav items */
-.nav-3d {
-  text-shadow:
-    1px 1px 0 #999,
-    2px 2px 0 #888,
-    3px 3px 2px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.nav-3d:hover {
-  text-shadow:
-    2px 2px 0 #777,
-    4px 4px 0 #666,
-    6px 6px 0 #555,
-    8px 8px 4px rgba(0, 0, 0, 0.5);
-  transform: scale(1.1) translateX(-2px);
-}
-
-/* 3D effect for active nav items */
-.nav-3d-active {
-  text-shadow:
-    1px 1px 0 #666,
-    2px 2px 0 #555,
-    3px 3px 0 #444,
-    4px 4px 3px rgba(0, 0, 0, 0.5);
+/* ── Divider with glow ───────────────────────────────────── */
+.amber-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 165, 71, 0.3), transparent);
 }

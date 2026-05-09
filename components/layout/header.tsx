@@ -12,32 +12,26 @@ interface HeaderProps {
   };
 }
 
-const rainbowColors = [
-  "text-red-500",
-  "text-orange-500",
-  "text-yellow-500",
-  "text-green-500",
-  "text-teal-500",
-  "text-blue-500",
-  "text-indigo-500",
-  "text-purple-500",
-  "text-pink-500",
-];
-
 export function Header({ title, action }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-black/5 bg-gray-200/90 backdrop-blur-xl px-8">
+    <header
+      className="sticky top-0 z-30 flex h-10 items-center gap-4 px-5"
+      style={{
+        background: "rgba(9, 9, 13, 0.85)",
+        backdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
       <div className="flex flex-1 items-center justify-between">
-        <h1 className="text-[40px] font-semibold tracking-tight title-3d leading-tight">
-          {title.split("").map((letter, index) => (
-            <span key={index} className={letter === " " ? "text-gray-800" : rainbowColors[index % rainbowColors.length]}>
-              {letter}
-            </span>
-          ))}
+        <h1
+          className="text-base font-bold tracking-wide"
+          style={{ color: "#e8dfc8", fontFamily: "'Syne', sans-serif" }}
+        >
+          {title}
         </h1>
         {action && (
           <Link href={action.href} className={buttonVariants({})}>
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus className="mr-1.5 h-3.5 w-3.5" />
             {action.label}
           </Link>
         )}

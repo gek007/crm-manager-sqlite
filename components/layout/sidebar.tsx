@@ -15,60 +15,81 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard, color: "text-blue-600" },
-  { href: "/projects", label: "Projects", icon: Building2, color: "text-orange-600" },
-  { href: "/cities", label: "Cities", icon: MapPin, color: "text-red-600" },
-  { href: "/service-types", label: "Service Types", icon: Wrench, color: "text-amber-600" },
-  { href: "/employee-types", label: "Employee Types", icon: Users, color: "text-purple-600" },
-  { href: "/cost-types", label: "Cost Types", icon: DollarSign, color: "text-green-600" },
-  { href: "/general-costs", label: "General Costs", icon: Receipt, color: "text-teal-600" },
-  { href: "/settings", label: "Settings", icon: Settings, color: "text-gray-600" },
+  { href: "/",               label: "Dashboard",     icon: LayoutDashboard },
+  { href: "/projects",       label: "Projects",      icon: Building2 },
+  { href: "/cities",         label: "Cities",        icon: MapPin },
+  { href: "/service-types",  label: "Service Types", icon: Wrench },
+  { href: "/employee-types", label: "Employee Types",icon: Users },
+  { href: "/cost-types",     label: "Cost Types",    icon: DollarSign },
+  { href: "/general-costs",  label: "General Costs", icon: Receipt },
+  { href: "/settings",       label: "Settings",      icon: Settings },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 flex-shrink-0 border-r border-black/5 bg-gray-200/80 backdrop-blur-xl sticky top-0 h-screen">
-      <div className="flex h-full flex-col">
-        {/* Logo */}
-        <div className="flex h-16 items-center border-b border-black/5 px-6">
-          <h1 className="text-[26px] font-bold text-black leading-none">
-            CRM Manager
-          </h1>
+    <aside
+      className="w-56 flex-shrink-0 sticky top-0 h-screen flex flex-col"
+      style={{
+        background: "#09090d",
+        borderRight: "1px solid rgba(255,255,255,0.05)",
+      }}
+    >
+      {/* Logo */}
+      <div
+        className="flex h-10 items-center px-4 gap-2"
+        style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+      >
+        <div
+          className="h-5 w-5 rounded flex items-center justify-center text-[10px] font-black flex-shrink-0"
+          style={{ background: "#d4a547", color: "#09090d" }}
+        >
+          C
         </div>
+        <span className="text-sm font-bold tracking-wide" style={{ color: "#e8dfc8", fontFamily: "'Syne', sans-serif" }}>
+          CRM Manager
+        </span>
+      </div>
 
-        {/* Navigation */}
-        <nav className="flex-1 space-y-1 p-4">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = item.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(item.href);
+      {/* Nav */}
+      <nav className="flex-1 px-2 py-2 space-y-0.5 overflow-y-auto">
+        <p
+          className="px-3 mb-1 text-[10px] font-semibold tracking-[0.14em] uppercase"
+          style={{ color: "rgba(255,255,255,0.5)" }}
+        >
+          Menu
+        </p>
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive =
+            item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
-                  isActive
-                    ? "bg-black text-white shadow-sm"
-                    : "text-gray-600 hover:bg-black/[0.04] hover:text-black"
-                )}
-              >
-                <Icon className={cn("h-5 w-5", isActive ? "text-white" : item.color)} />
-                <span
-                  className={cn(
-                    isActive ? "nav-3d-active" : "nav-3d"
-                  )}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            );
-          })}
-        </nav>
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn("nav-item flex items-center gap-2.5 rounded-md px-3 py-1.5 text-sm font-medium", isActive ? "nav-active" : "")}
+              style={{ color: isActive ? "#d4a547" : "rgba(255,255,255,0.72)" }}
+            >
+              <Icon
+                className="h-4 w-4 flex-shrink-0"
+                style={{ color: isActive ? "#d4a547" : "rgba(255,255,255,0.55)" }}
+              />
+              {item.label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      {/* Footer hint */}
+      <div
+        className="px-4 py-2"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+      >
+        <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.4)" }}>
+          v1.0 · Construction CRM
+        </p>
       </div>
     </aside>
   );

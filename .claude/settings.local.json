@@ -24,7 +24,20 @@
       "Bash(copy:*)",
       "mcp__playwright__browser_install",
       "Bash(npx prisma db seed:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(gh pr *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(Get-ChildItem -Path 'G:\\\\__VSCode\\\\_Archive_\\\\crm-manager' -Depth 0)",
+      "Bash(Select-Object Name, FullName, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(npm run *)",
+      "Bash(npx prisma *)",
+      "Bash(node -e 'const {PrismaClient}=require\\('\\\\''@prisma/client'\\\\''\\);const p=new PrismaClient\\(\\);p.project.findMany\\({include:{city:true,serviceType:true,employeePrices:true}}\\).then\\(r=>console.log\\(JSON.stringify\\(r,null,2\\)\\)\\).finally\\(\\(\\)=>p.$disconnect\\(\\)\\)')",
+      "Bash(Remove-Item -Path \"G:\\\\__VSCode\\\\_Archive_\\\\crm-manager\\\\app\\\\api\\\\export\\\\excel\\\\route.ts\" -Force)",
+      "Bash(Remove-Item -Path \"G:\\\\__VSCode\\\\_Archive_\\\\crm-manager\\\\app\\\\api\\\\export\\\\excel\" -Force -ErrorAction SilentlyContinue)",
+      "Bash(Remove-Item -Path \"G:\\\\__VSCode\\\\_Archive_\\\\crm-manager\\\\app\\\\api\\\\export\" -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }

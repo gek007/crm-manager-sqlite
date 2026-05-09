@@ -8,6 +8,8 @@ npm run dev
 Then open http://localhost:3000.
 
 
-If dependencies are already installed, you can usually just run:
-
+# Run app 
 npm run dev
+
+# Seed DB:
+npm run db:seed 
