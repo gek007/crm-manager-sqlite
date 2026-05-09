@@ -38,8 +38,6 @@ next-env.d.ts
 *.db-wal
 
 # Prisma
-/prisma/migrations/**/migration.sql
-prisma/migrations/*
 
 # IDE
 .vscode/

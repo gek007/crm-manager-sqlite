@@ -1,15 +1,14 @@
-This app is a Next.js project with Prisma + SQLite. From G:\__VSCode\_Archive_\crm-manager, run:
+This app is a Next.js project with Prisma + SQLite.
 
-npm install
-npm run db:generate
-npm run db:migrate
-npm run db:seed
+After cloning:
+
+```bash
+git clone … && cd crm-manager-sqlite
+npm install          # copies .env from .env.example if missing; runs prisma generate (do not use --ignore-scripts)
+npm run db:deploy    # creates SQLite DB and applies migrations
 npm run dev
-Then open http://localhost:3000.
+```
 
+Then open http://localhost:3000 (or the URL printed in the terminal).
 
-# Run app 
-npm run dev
-
-# Seed DB:
-npm run db:seed 
+Optional: `npm run db:seed` to load seed data.
