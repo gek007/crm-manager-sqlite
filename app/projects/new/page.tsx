@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,17 +29,17 @@ export default async function NewProjectPage() {
             <CardContent className="space-y-2">
               {!hasCities && (
                 <p className="text-muted-foreground">
-                  No cities found. <a href="/cities/new" className="text-primary hover:underline">Add a city</a> first.
+                  No cities found. <Link href="/cities/new" className="text-primary hover:underline">Add a city</Link> first.
                 </p>
               )}
               {!hasServiceTypes && (
                 <p className="text-muted-foreground">
-                  No service types found. <a href="/service-types/new" className="text-primary hover:underline">Add a service type</a> first.
+                  No service types found. <Link href="/service-types/new" className="text-primary hover:underline">Add a service type</Link> first.
                 </p>
               )}
               {!hasEmployeeTypes && (
                 <p className="text-muted-foreground">
-                  No employee types found. <a href="/employee-types/new" className="text-primary hover:underline">Add an employee type</a> first.
+                  No employee types found. <Link href="/employee-types/new" className="text-primary hover:underline">Add an employee type</Link> first.
                 </p>
               )}
             </CardContent>

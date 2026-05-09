@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { prisma } from "@/lib/prisma";
@@ -43,11 +44,9 @@ export default async function EmployeeTypesPage() {
                       <TableCell>${type.dayRate}/day</TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
-                          <a href={`/employee-types/${type.id}/edit`}>
-                            <Button variant="ghost" size="sm">
-                              <Edit className="h-4 w-4" />
-                            </Button>
-                          </a>
+                          <Link href={`/employee-types/${type.id}/edit`} className={buttonVariants({ variant: "ghost", size: "sm" })}>
+                            <Edit className="h-4 w-4" />
+                          </Link>
                           <DeleteButton id={type.id} action={deleteEmployeeType} />
                         </div>
                       </TableCell>

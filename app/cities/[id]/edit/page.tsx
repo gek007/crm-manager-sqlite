@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useEffect, useState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SubmitButton } from "@/components/ui/submit-button";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { FormMessage } from "@/components/ui/form-message";
 import { updateCity } from "@/app/actions";
 import { useParams } from "next/navigation";
@@ -76,7 +77,9 @@ export default function EditCityPage() {
 
               <div className="flex gap-3 pt-4">
                 <SubmitButton>Update City</SubmitButton>
-                <a href="/cities"><Button type="button" variant="secondary">Cancel</Button></a>
+                <Link href="/cities" className={buttonVariants({ variant: "secondary" })}>
+                  Cancel
+                </Link>
               </div>
             </form>
           </CardContent>

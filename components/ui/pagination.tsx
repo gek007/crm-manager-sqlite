@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PaginationProps {
@@ -19,12 +21,13 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
       </p>
       <div className="flex gap-2">
         {currentPage > 1 ? (
-          <a href={`${basePath}${separator}page=${currentPage - 1}`}>
-            <Button variant="outline" size="sm">
-              <ChevronLeft className="h-4 w-4 mr-1" />
-              Previous
-            </Button>
-          </a>
+          <Link
+            href={`${basePath}${separator}page=${currentPage - 1}`}
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            Previous
+          </Link>
         ) : (
           <Button variant="outline" size="sm" disabled>
             <ChevronLeft className="h-4 w-4 mr-1" />
@@ -32,12 +35,13 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
           </Button>
         )}
         {currentPage < totalPages ? (
-          <a href={`${basePath}${separator}page=${currentPage + 1}`}>
-            <Button variant="outline" size="sm">
-              Next
-              <ChevronRight className="h-4 w-4 ml-1" />
-            </Button>
-          </a>
+          <Link
+            href={`${basePath}${separator}page=${currentPage + 1}`}
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            Next
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Link>
         ) : (
           <Button variant="outline" size="sm" disabled>
             Next

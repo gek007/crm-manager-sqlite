@@ -5,9 +5,11 @@ node_modules
 
 # Testing
 coverage
+.playwright-mcp/
 
 # Next.js
 .next/
+.next-dev.*
 out/
 build/
 dist/

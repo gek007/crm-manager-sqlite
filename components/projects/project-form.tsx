@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { FormMessage } from "@/components/ui/form-message";
 import { EmployeePricesForm } from "@/components/projects/employee-prices-form";
@@ -157,9 +158,9 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
             <SubmitButton className="neon-glow">
               {project ? "Update Project" : "Create Project"}
             </SubmitButton>
-            <a href="/projects">
-              <Button type="button" variant="secondary">Cancel</Button>
-            </a>
+            <Link href="/projects" className={buttonVariants({ variant: "secondary" })}>
+              Cancel
+            </Link>
           </div>
         </form>
       </CardContent>

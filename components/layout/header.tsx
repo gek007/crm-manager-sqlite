@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 interface HeaderProps {
   title: string;
@@ -35,12 +36,10 @@ export function Header({ title, action }: HeaderProps) {
           ))}
         </h1>
         {action && (
-          <a href={action.href}>
-            <Button>
-              <Plus className="mr-2 h-4 w-4" />
-              {action.label}
-            </Button>
-          </a>
+          <Link href={action.href} className={buttonVariants({})}>
+            <Plus className="mr-2 h-4 w-4" />
+            {action.label}
+          </Link>
         )}
       </div>
     </header>

@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SubmitButton } from "@/components/ui/submit-button";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { FormMessage } from "@/components/ui/form-message";
 import { createEmployeeType } from "@/app/actions";
 
@@ -57,9 +58,9 @@ export default function NewEmployeeTypePage() {
 
               <div className="flex gap-3 pt-4">
                 <SubmitButton>Save Employee Type</SubmitButton>
-                <a href="/employee-types">
-                  <Button type="button" variant="secondary">Cancel</Button>
-                </a>
+                <Link href="/employee-types" className={buttonVariants({ variant: "secondary" })}>
+                  Cancel
+                </Link>
               </div>
             </form>
           </CardContent>

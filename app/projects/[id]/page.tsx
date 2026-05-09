@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 import { ArrowLeft, Edit, Plus } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -42,18 +43,14 @@ export default async function ProjectDetailsPage({
   return (
     <AppLayout>
       <div className="flex items-center gap-4 px-6 py-4 border-b border-border">
-        <a href="/projects">
-          <Button variant="ghost" size="sm">
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-        </a>
+        <Link href="/projects" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+          <ArrowLeft className="h-4 w-4" />
+        </Link>
         <h1 className="text-xl font-semibold">{project.projectName}</h1>
         <div className="ml-auto flex gap-2">
-          <a href={`/projects/${project.id}/edit`}>
-            <Button variant="secondary" size="sm">
-              <Edit className="h-4 w-4" />
-            </Button>
-          </a>
+          <Link href={`/projects/${project.id}/edit`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
+            <Edit className="h-4 w-4" />
+          </Link>
           <DeleteProjectButton projectId={project.id} projectName={project.projectName} />
         </div>
       </div>
@@ -108,12 +105,10 @@ export default async function ProjectDetailsPage({
         <Card className="border-border/50">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-lg text-primary">Employee Prices</CardTitle>
-            <a href={`/projects/${project.id}/employee-prices/new`}>
-              <Button size="sm">
-                <Plus className="h-4 w-4 mr-2" />
-                Add Employee Price
-              </Button>
-            </a>
+            <Link href={`/projects/${project.id}/employee-prices/new`} className={buttonVariants({ size: "sm" })}>
+              <Plus className="h-4 w-4 mr-2" />
+              Add Employee Price
+            </Link>
           </CardHeader>
           <CardContent>
             {project.employeePrices.length === 0 ? (
