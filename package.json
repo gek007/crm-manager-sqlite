@@ -1,5 +1,5 @@
 {
-  "name": "crm-manager",
+  "name": "crm-manager-sqlite",
   "version": "1.0.0",
   "description": "Construction Project CRM",
   "scripts": {
