@@ -27,7 +27,7 @@ export async function GET() {
       const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
       const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
       monthlyMap.set(key, {
-        label: d.toLocaleDateString("en-US", { month: "short", year: "2-digit" }),
+        label: d.toLocaleDateString("ru-RU", { month: "short", year: "2-digit" }),
         revenue: 0,
         count: 0,
       });
@@ -98,6 +98,6 @@ export async function GET() {
     });
   } catch (error) {
     console.error("Analytics error:", error);
-    return NextResponse.json({ error: "Failed to fetch analytics" }, { status: 500 });
+    return NextResponse.json({ error: "Не удалось загрузить аналитику" }, { status: 500 });
   }
 }

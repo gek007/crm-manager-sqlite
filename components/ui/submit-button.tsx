@@ -13,7 +13,7 @@ export function SubmitButton({ children, className }: SubmitButtonProps) {
 
   return (
     <Button type="submit" disabled={pending} className={className}>
-      {pending ? "Saving..." : children}
+      {pending ? "Сохранение…" : children}
     </Button>
   );
 }

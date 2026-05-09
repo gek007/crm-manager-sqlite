@@ -14,25 +14,25 @@ export default async function CostTypesPage() {
 
   return (
     <AppLayout>
-      <Header title="Cost Types" action={{ label: "Add Cost Type", href: "/cost-types/new" }} />
+      <Header title="Типы затрат" action={{ label: "Add Cost Type", href: "/cost-types/new" }} />
 
       <div className="p-6">
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">All Cost Types</CardTitle>
+            <CardTitle className="text-lg">Все типы затрат</CardTitle>
           </CardHeader>
           <CardContent>
             {costTypes.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
-                No cost types found. Add your first cost type to get started.
+                Типов затрат пока нет. Добавьте тип для начала работы.
               </p>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>ID</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Описание</TableHead>
+                    <TableHead className="text-right">Действия</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

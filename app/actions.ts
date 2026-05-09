@@ -57,7 +57,7 @@ export async function deleteCity(_prev: ActionResult, formData: FormData): Promi
 
   const hasProjects = await prisma.project.count({ where: { cityId: id } });
   if (hasProjects > 0) {
-    return { error: `Cannot delete: ${hasProjects} project(s) use this city` };
+    return { error: `Нельзя удалить: город используется в ${hasProjects} проектах.` };
   }
 
   await prisma.city.delete({ where: { id } });
@@ -98,7 +98,7 @@ export async function deleteServiceType(_prev: ActionResult, formData: FormData)
 
   const hasProjects = await prisma.project.count({ where: { serviceTypeId: id } });
   if (hasProjects > 0) {
-    return { error: `Cannot delete: ${hasProjects} project(s) use this service type` };
+    return { error: `Нельзя удалить: тип услуги используется в ${hasProjects} проектах.` };
   }
 
   await prisma.serviceType.delete({ where: { id } });
@@ -141,7 +141,7 @@ export async function deleteEmployeeType(_prev: ActionResult, formData: FormData
 
   const hasEmployeePrices = await prisma.employeePrice.count({ where: { employeeTypeId: id } });
   if (hasEmployeePrices > 0) {
-    return { error: `Cannot delete: ${hasEmployeePrices} employee price record(s) reference this type` };
+    return { error: `Нельзя удалить: есть ${hasEmployeePrices} записей с этим типом сотрудника.` };
   }
 
   await prisma.employeeType.delete({ where: { id } });
@@ -182,7 +182,7 @@ export async function deleteCostType(_prev: ActionResult, formData: FormData): P
 
   const hasGeneralCosts = await prisma.generalCost.count({ where: { costTypeId: id } });
   if (hasGeneralCosts > 0) {
-    return { error: `Cannot delete: ${hasGeneralCosts} general cost(s) use this cost type` };
+    return { error: `Нельзя удалить: есть ${hasGeneralCosts} общих затрат с этим типом.` };
   }
 
   await prisma.costType.delete({ where: { id } });

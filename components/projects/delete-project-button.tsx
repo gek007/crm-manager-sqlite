@@ -29,12 +29,12 @@ export function DeleteProjectButton({ projectId, projectName }: DeleteProjectBut
         router.refresh();
       } else {
         const data = await response.json().catch(() => null);
-        setError(data?.error || "Failed to delete project");
+        setError(data?.error || "Не удалось удалить проект");
         setIsDeleting(false);
         setShowConfirm(false);
       }
     } catch {
-      setError("Network error while deleting project");
+      setError("Ошибка сети при удалении проекта");
       setIsDeleting(false);
       setShowConfirm(false);
     }

@@ -25,39 +25,39 @@ export default function EditEmployeeTypePage() {
 
   useEffect(() => {
     fetch(`/api/employee-types/${params.id}`)
-      .then((r) => { if (!r.ok) throw new Error("Not found"); return r.json(); })
+      .then((r) => { if (!r.ok) throw new Error("Не найдено"); return r.json(); })
       .then(setItem)
       .catch(console.error)
       .finally(() => setLoading(false));
   }, [params.id]);
 
   if (loading) {
-    return <AppLayout><Header title="Edit Employee Type" /><div className="p-6"><p className="text-muted-foreground text-center py-8">Loading...</p></div></AppLayout>;
+    return <AppLayout><Header title="Редактирование типа сотрудника" /><div className="p-6"><p className="text-muted-foreground text-center py-8">Загрузка...</p></div></AppLayout>;
   }
   if (!item) {
-    return <AppLayout><Header title="Edit Employee Type" /><div className="p-6"><p className="text-destructive text-center py-8">Employee type not found.</p></div></AppLayout>;
+    return <AppLayout><Header title="Редактирование типа сотрудника" /><div className="p-6"><p className="text-destructive text-center py-8">Тип сотрудника не найден.</p></div></AppLayout>;
   }
 
   return (
     <AppLayout>
-      <Header title="Edit Employee Type" />
+      <Header title="Редактирование типа сотрудника" />
       <div className="p-6">
         <Card className="max-w-2xl border-border/50">
-          <CardHeader><CardTitle className="text-lg">Edit Employee Type</CardTitle></CardHeader>
+          <CardHeader><CardTitle className="text-lg">Изменить тип сотрудника</CardTitle></CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
               <input type="hidden" name="id" value={item.id} />
               <FormMessage message={state?.error} />
               <div className="space-y-2">
-                <label htmlFor="description" className="text-sm font-medium">Description *</label>
+                <label htmlFor="description" className="text-sm font-medium">Описание *</label>
                 <input type="text" id="description" name="description" required defaultValue={item.description} className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
               </div>
               <div className="space-y-2">
-                <label htmlFor="dayRate" className="text-sm font-medium">Day Rate ($) *</label>
+                <label htmlFor="dayRate" className="text-sm font-medium">Ставка за день ($) *</label>
                 <input type="number" id="dayRate" name="dayRate" step="0.01" min="0" required defaultValue={item.dayRate} className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
               </div>
               <div className="flex gap-3 pt-4">
-                <SubmitButton>Update Employee Type</SubmitButton>
+                <SubmitButton>Сохранить изменения</SubmitButton>
                 <Link href="/employee-types" className={buttonVariants({ variant: "secondary" })}>
                   Cancel
                 </Link>

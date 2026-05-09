@@ -31,9 +31,9 @@ export default function NewGeneralCostPage() {
   if (loading) {
     return (
       <AppLayout>
-        <Header title="Add General Cost" />
+        <Header title="Добавить общую статью затрат" />
         <div className="p-6">
-          <p className="text-muted-foreground text-center py-8">Loading...</p>
+          <p className="text-muted-foreground text-center py-8">Загрузка...</p>
         </div>
       </AppLayout>
     );
@@ -41,12 +41,12 @@ export default function NewGeneralCostPage() {
 
   return (
     <AppLayout>
-      <Header title="Add General Cost" />
+      <Header title="Добавить общую статью затрат" />
 
       <div className="p-6">
         <Card className="max-w-2xl border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">New General Cost</CardTitle>
+            <CardTitle className="text-lg">Новая общая статья затрат</CardTitle>
           </CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
@@ -54,7 +54,7 @@ export default function NewGeneralCostPage() {
 
               <div className="space-y-2">
                 <label htmlFor="costTypeId" className="text-sm font-medium">
-                  Cost Type *
+                  Тип затрат *
                 </label>
                 <select
                   id="costTypeId"
@@ -62,7 +62,7 @@ export default function NewGeneralCostPage() {
                   required
                   className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <option value="">Select cost type</option>
+                  <option value="">Выберите тип затрат</option>
                   {costTypes.map((type) => (
                     <option key={type.id} value={type.id}>
                       {type.description}
@@ -73,30 +73,30 @@ export default function NewGeneralCostPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="fromYear" className="text-sm font-medium">From Year *</label>
+                  <label htmlFor="fromYear" className="text-sm font-medium">Год (с) *</label>
                   <input type="number" id="fromYear" name="fromYear" required className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="2024" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="toYear" className="text-sm font-medium">To Year *</label>
+                  <label htmlFor="toYear" className="text-sm font-medium">Год (по) *</label>
                   <input type="number" id="toYear" name="toYear" required className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="2024" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="fromDay" className="text-sm font-medium">From Day *</label>
+                  <label htmlFor="fromDay" className="text-sm font-medium">День (с) *</label>
                   <input type="number" id="fromDay" name="fromDay" required min="1" max="31" className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="1" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="toDay" className="text-sm font-medium">To Day *</label>
+                  <label htmlFor="toDay" className="text-sm font-medium">День (по) *</label>
                   <input type="number" id="toDay" name="toDay" required min="1" max="31" className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="31" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="total" className="text-sm font-medium">Total Cost ($) *</label>
+                <label htmlFor="total" className="text-sm font-medium">Сумма ($) *</label>
                 <input type="number" id="total" name="total" step="0.01" min="0" required className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="0.00" />
               </div>
 
               <div className="flex gap-3 pt-4">
-                <SubmitButton>Save General Cost</SubmitButton>
+                <SubmitButton>Сохранить</SubmitButton>
                 <Link href="/general-costs" className={buttonVariants({ variant: "secondary" })}>
                   Cancel
                 </Link>

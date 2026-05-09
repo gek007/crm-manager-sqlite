@@ -14,26 +14,26 @@ export default async function EmployeeTypesPage() {
 
   return (
     <AppLayout>
-      <Header title="Employee Types" action={{ label: "Add Employee Type", href: "/employee-types/new" }} />
+      <Header title="Типы сотрудников" action={{ label: "Add Employee Type", href: "/employee-types/new" }} />
 
       <div className="p-6">
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">All Employee Types</CardTitle>
+            <CardTitle className="text-lg">Все типы сотрудников</CardTitle>
           </CardHeader>
           <CardContent>
             {employeeTypes.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
-                No employee types found. Add your first employee type to get started.
+                Типов сотрудников пока нет. Добавьте тип для начала работы.
               </p>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>ID</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead>Day Rate</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Описание</TableHead>
+                    <TableHead>Ставка</TableHead>
+                    <TableHead className="text-right">Действия</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -41,7 +41,7 @@ export default async function EmployeeTypesPage() {
                     <TableRow key={type.id}>
                       <TableCell>{type.id}</TableCell>
                       <TableCell className="font-medium">{type.description}</TableCell>
-                      <TableCell>${type.dayRate}/day</TableCell>
+                      <TableCell>${type.dayRate}/день</TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
                           <Link href={`/employee-types/${type.id}/edit`} className={buttonVariants({ variant: "ghost", size: "sm" })}>

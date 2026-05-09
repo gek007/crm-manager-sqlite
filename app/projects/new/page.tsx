@@ -2,8 +2,6 @@ import Link from "next/link";
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { EmployeePricesForm } from "@/components/projects/employee-prices-form";
 import { prisma } from "@/lib/prisma";
 import { ProjectForm } from "@/components/projects/project-form";
 
@@ -18,28 +16,28 @@ export default async function NewProjectPage() {
 
   return (
     <AppLayout>
-      <Header title="New Project" />
+      <Header title="Новый проект" />
 
       <div className="p-6">
         {!hasCities || !hasServiceTypes || !hasEmployeeTypes ? (
           <Card className="max-w-2xl mx-auto border-destructive/50">
             <CardHeader>
-              <CardTitle className="text-lg text-destructive">Setup Required</CardTitle>
+              <CardTitle className="text-lg text-destructive">Требуется настройка</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               {!hasCities && (
                 <p className="text-muted-foreground">
-                  No cities found. <Link href="/cities/new" className="text-primary hover:underline">Add a city</Link> first.
+                  Города не найдены. Сначала <Link href="/cities/new" className="text-primary hover:underline">добавьте город</Link>.
                 </p>
               )}
               {!hasServiceTypes && (
                 <p className="text-muted-foreground">
-                  No service types found. <Link href="/service-types/new" className="text-primary hover:underline">Add a service type</Link> first.
+                  Типы услуг не найдены. Сначала <Link href="/service-types/new" className="text-primary hover:underline">добавьте тип услуги</Link>.
                 </p>
               )}
               {!hasEmployeeTypes && (
                 <p className="text-muted-foreground">
-                  No employee types found. <Link href="/employee-types/new" className="text-primary hover:underline">Add an employee type</Link> first.
+                  Типы сотрудников не найдены. Сначала <Link href="/employee-types/new" className="text-primary hover:underline">добавьте тип сотрудника</Link>.
                 </p>
               )}
             </CardContent>

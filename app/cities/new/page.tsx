@@ -15,12 +15,12 @@ export default function NewCityPage() {
 
   return (
     <AppLayout>
-      <Header title="Add City" />
+      <Header title="Добавить город" />
 
       <div className="p-6">
         <Card className="max-w-2xl border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">New City</CardTitle>
+            <CardTitle className="text-lg">Новый город</CardTitle>
           </CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
@@ -28,7 +28,7 @@ export default function NewCityPage() {
 
               <div className="space-y-2">
                 <label htmlFor="city" className="text-sm font-medium">
-                  City Name *
+                  Название города *
                 </label>
                 <input
                   type="text"
@@ -36,25 +36,25 @@ export default function NewCityPage() {
                   name="city"
                   required
                   className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  placeholder="Enter city name"
+                  placeholder="Введите название города"
                 />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="region" className="text-sm font-medium">
-                  Region
+                  Регион
                 </label>
                 <input
                   type="text"
                   id="region"
                   name="region"
                   className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  placeholder="Enter region (optional)"
+                  placeholder="Регион (необязательно)"
                 />
               </div>
 
               <div className="flex gap-3 pt-4">
-                <SubmitButton>Save City</SubmitButton>
+                <SubmitButton>Сохранить город</SubmitButton>
                 <Link href="/cities" className={buttonVariants({ variant: "secondary" })}>
                   Cancel
                 </Link>

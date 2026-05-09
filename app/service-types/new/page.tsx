@@ -15,12 +15,12 @@ export default function NewServiceTypePage() {
 
   return (
     <AppLayout>
-      <Header title="Add Service Type" />
+      <Header title="Добавить тип услуги" />
 
       <div className="p-6">
         <Card className="max-w-2xl border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">New Service Type</CardTitle>
+            <CardTitle className="text-lg">Новый тип услуги</CardTitle>
           </CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
@@ -28,7 +28,7 @@ export default function NewServiceTypePage() {
 
               <div className="space-y-2">
                 <label htmlFor="description" className="text-sm font-medium">
-                  Description *
+                  Описание *
                 </label>
                 <input
                   type="text"
@@ -36,12 +36,12 @@ export default function NewServiceTypePage() {
                   name="description"
                   required
                   className="flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  placeholder="e.g., Flooring, Painting, Electrical"
+                  placeholder="Например: Полы, Отделка, Электромонтаж"
                 />
               </div>
 
               <div className="flex gap-3 pt-4">
-                <SubmitButton>Save Service Type</SubmitButton>
+                <SubmitButton>Сохранить тип</SubmitButton>
                 <Link href="/service-types" className={buttonVariants({ variant: "secondary" })}>
                   Cancel
                 </Link>

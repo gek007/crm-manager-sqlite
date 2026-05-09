@@ -35,7 +35,7 @@ export default function EditGeneralCostPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch(`/api/general-costs/${params.id}`).then((r) => { if (!r.ok) throw new Error("Not found"); return r.json(); }),
+      fetch(`/api/general-costs/${params.id}`).then((r) => { if (!r.ok) throw new Error("Не найдено"); return r.json(); }),
       fetch("/api/cost-types").then((r) => r.json()),
     ])
       .then(([gc, ct]) => { setItem(gc); setCostTypes(ct); })
@@ -46,27 +46,27 @@ export default function EditGeneralCostPage() {
   const inputClass = "flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
   if (loading) {
-    return <AppLayout><Header title="Edit General Cost" /><div className="p-6"><p className="text-muted-foreground text-center py-8">Loading...</p></div></AppLayout>;
+    return <AppLayout><Header title="Редактирование общих затрат" /><div className="p-6"><p className="text-muted-foreground text-center py-8">Загрузка...</p></div></AppLayout>;
   }
   if (!item) {
-    return <AppLayout><Header title="Edit General Cost" /><div className="p-6"><p className="text-destructive text-center py-8">General cost not found.</p></div></AppLayout>;
+    return <AppLayout><Header title="Редактирование общих затрат" /><div className="p-6"><p className="text-destructive text-center py-8">Запись не найдена.</p></div></AppLayout>;
   }
 
   return (
     <AppLayout>
-      <Header title="Edit General Cost" />
+      <Header title="Редактирование общих затрат" />
       <div className="p-6">
         <Card className="max-w-2xl border-border/50">
-          <CardHeader><CardTitle className="text-lg">Edit General Cost</CardTitle></CardHeader>
+          <CardHeader><CardTitle className="text-lg">Изменить общую статью затрат</CardTitle></CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
               <input type="hidden" name="id" value={item.id} />
               <FormMessage message={state?.error} />
 
               <div className="space-y-2">
-                <label htmlFor="costTypeId" className="text-sm font-medium">Cost Type *</label>
+                <label htmlFor="costTypeId" className="text-sm font-medium">Тип затрат *</label>
                 <select id="costTypeId" name="costTypeId" required defaultValue={item.costTypeId} className={inputClass}>
-                  <option value="">Select cost type</option>
+                  <option value="">Выберите тип затрат</option>
                   {costTypes.map((type) => (
                     <option key={type.id} value={type.id}>{type.description}</option>
                   ))}
@@ -75,30 +75,30 @@ export default function EditGeneralCostPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="fromYear" className="text-sm font-medium">From Year *</label>
+                  <label htmlFor="fromYear" className="text-sm font-medium">Год (с) *</label>
                   <input type="number" id="fromYear" name="fromYear" required defaultValue={item.fromYear} className={inputClass} />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="toYear" className="text-sm font-medium">To Year *</label>
+                  <label htmlFor="toYear" className="text-sm font-medium">Год (по) *</label>
                   <input type="number" id="toYear" name="toYear" required defaultValue={item.toYear} className={inputClass} />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="fromDay" className="text-sm font-medium">From Day *</label>
+                  <label htmlFor="fromDay" className="text-sm font-medium">День (с) *</label>
                   <input type="number" id="fromDay" name="fromDay" required min="1" max="31" defaultValue={item.fromDay} className={inputClass} />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="toDay" className="text-sm font-medium">To Day *</label>
+                  <label htmlFor="toDay" className="text-sm font-medium">День (по) *</label>
                   <input type="number" id="toDay" name="toDay" required min="1" max="31" defaultValue={item.toDay} className={inputClass} />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="total" className="text-sm font-medium">Total Cost ($) *</label>
+                <label htmlFor="total" className="text-sm font-medium">Сумма ($) *</label>
                 <input type="number" id="total" name="total" step="0.01" min="0" required defaultValue={item.total} className={inputClass} />
               </div>
 
               <div className="flex gap-3 pt-4">
-                <SubmitButton>Update General Cost</SubmitButton>
+                <SubmitButton>Сохранить изменения</SubmitButton>
                 <Link href="/general-costs" className={buttonVariants({ variant: "secondary" })}>
                   Cancel
                 </Link>

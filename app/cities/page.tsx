@@ -14,26 +14,26 @@ export default async function CitiesPage() {
 
   return (
     <AppLayout>
-      <Header title="Cities" action={{ label: "Add City", href: "/cities/new" }} />
+      <Header title="Города" action={{ label: "Add City", href: "/cities/new" }} />
 
       <div className="p-6">
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">All Cities</CardTitle>
+            <CardTitle className="text-lg">Все города</CardTitle>
           </CardHeader>
           <CardContent>
             {cities.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
-                No cities found. Add your first city to get started.
+                Городов пока нет. Добавьте город для начала.
               </p>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>ID</TableHead>
-                    <TableHead>City</TableHead>
-                    <TableHead>Region</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Город</TableHead>
+                    <TableHead>Регион</TableHead>
+                    <TableHead className="text-right">Действия</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

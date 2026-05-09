@@ -64,7 +64,7 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
     <Card className="max-w-5xl border-border/50">
       <CardHeader>
         <CardTitle className="text-lg">
-          {project ? "Edit Project" : "Create New Project"}
+          {project ? "Редактирование проекта" : "Новый проект"}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -74,29 +74,29 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
           <FormMessage message={state?.error} />
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">Basic Information</h3>
+            <h3 className="text-lg font-semibold text-primary">Основное</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="projectName" className="text-sm font-medium">Project Name *</label>
-                <input type="text" id="projectName" name="projectName" required className={inputClass} placeholder="Enter project name" defaultValue={project?.projectName ?? ""} />
+                <label htmlFor="projectName" className="text-sm font-medium">Название проекта *</label>
+                <input type="text" id="projectName" name="projectName" required className={inputClass} placeholder="Введите название" defaultValue={project?.projectName ?? ""} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="date" className="text-sm font-medium">Date *</label>
+                <label htmlFor="date" className="text-sm font-medium">Дата *</label>
                 <input type="date" id="date" name="date" required className={inputClass} defaultValue={project?.date ?? ""} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="cityId" className="text-sm font-medium">City *</label>
+                <label htmlFor="cityId" className="text-sm font-medium">Город *</label>
                 <select id="cityId" name="cityId" required className={inputClass} defaultValue={project?.cityId ?? ""}>
-                  <option value="">Select city</option>
+                  <option value="">Выберите город</option>
                   {cities.map((city) => (
                     <option key={city.id} value={city.id}>{city.city}</option>
                   ))}
                 </select>
               </div>
               <div className="space-y-2">
-                <label htmlFor="serviceTypeId" className="text-sm font-medium">Service Type *</label>
+                <label htmlFor="serviceTypeId" className="text-sm font-medium">Тип услуги *</label>
                 <select id="serviceTypeId" name="serviceTypeId" required className={inputClass} defaultValue={project?.serviceTypeId ?? ""}>
-                  <option value="">Select service type</option>
+                  <option value="">Выберите тип услуги</option>
                   {serviceTypes.map((type) => (
                     <option key={type.id} value={type.id}>{type.description}</option>
                   ))}
@@ -104,34 +104,34 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
               </div>
             </div>
             <div className="space-y-2">
-              <label htmlFor="address" className="text-sm font-medium">Address *</label>
-              <input type="text" id="address" name="address" required className={inputClass} placeholder="Enter full address" defaultValue={project?.address ?? ""} />
+              <label htmlFor="address" className="text-sm font-medium">Адрес *</label>
+              <input type="text" id="address" name="address" required className={inputClass} placeholder="Полный адрес" defaultValue={project?.address ?? ""} />
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">Project Details</h3>
+            <h3 className="text-lg font-semibold text-primary">Детали проекта</h3>
             <div className="grid grid-cols-3 gap-4">
               <div className="space-y-2">
-                <label htmlFor="floors" className="text-sm font-medium">Floors</label>
+                <label htmlFor="floors" className="text-sm font-medium">Этажи</label>
                 <input type="number" id="floors" name="floors" min="0" className={inputClass} placeholder="0" defaultValue={project?.floors ?? ""} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="days" className="text-sm font-medium">Days</label>
+                <label htmlFor="days" className="text-sm font-medium">Дней</label>
                 <input type="number" id="days" name="days" min="0" className={inputClass} placeholder="0" defaultValue={project?.days ?? ""} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="material" className="text-sm font-medium">Material</label>
-                <input type="text" id="material" name="material" className={inputClass} placeholder="Material type" defaultValue={project?.material ?? ""} />
+                <label htmlFor="material" className="text-sm font-medium">Материал</label>
+                <input type="text" id="material" name="material" className={inputClass} placeholder="Тип материала" defaultValue={project?.material ?? ""} />
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">Additional Costs</h3>
+            <h3 className="text-lg font-semibold text-primary">Дополнительные расходы</h3>
             <div className="grid grid-cols-4 gap-4">
               <div className="space-y-2">
-                <label htmlFor="gasFoodWater" className="text-sm font-medium">Gas/Food/Water ($)</label>
+                <label htmlFor="gasFoodWater" className="text-sm font-medium">Газ/питание/вода ($)</label>
                 <input type="number" id="gasFoodWater" name="gasFoodWater" step="0.01" min="0" defaultValue={project?.gasFoodWater ?? 0} className={inputClass} />
               </div>
               <div className="space-y-2">
@@ -143,7 +143,7 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
                 <input type="number" id="checker" name="checker" step="0.01" min="0" defaultValue={project?.checker ?? 0} className={inputClass} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="totalPaid" className="text-sm font-medium">Total Paid ($) *</label>
+                <label htmlFor="totalPaid" className="text-sm font-medium">Всего оплачено ($) *</label>
                 <input type="number" id="totalPaid" name="totalPaid" step="0.01" min="0" defaultValue={project?.totalPaid ?? 0} required className={`${inputClass} font-semibold`} />
               </div>
             </div>
@@ -156,7 +156,7 @@ export function ProjectForm({ cities, serviceTypes, employeeTypes, project }: Pr
 
           <div className="flex gap-3 pt-4 border-t border-border">
             <SubmitButton className="neon-glow">
-              {project ? "Update Project" : "Create Project"}
+              {project ? "Сохранить проект" : "Создать проект"}
             </SubmitButton>
             <Link href="/projects" className={buttonVariants({ variant: "secondary" })}>
               Cancel

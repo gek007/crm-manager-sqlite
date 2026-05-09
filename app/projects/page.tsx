@@ -33,16 +33,16 @@ export default async function ProjectsPage({
 
   return (
     <AppLayout>
-      <Header title="Projects" action={{ label: "New Project", href: "/projects/new" }} />
+      <Header title="Проекты" action={{ label: "New Project", href: "/projects/new" }} />
 
       <div className="p-6">
         <Card className="border-border/50">
           <CardHeader>
             <CardTitle className="text-lg">
-              All Projects
+              Все проекты
               {totalCount > 0 && (
                 <span className="text-sm font-normal text-muted-foreground ml-2">
-                  ({totalCount} total)
+                  ({totalCount} всего)
                 </span>
               )}
             </CardTitle>
@@ -50,7 +50,7 @@ export default async function ProjectsPage({
           <CardContent>
             {projects.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
-                No projects found. Create your first project to get started.
+                Проектов нет. Создайте первый проект для начала работы.
               </p>
             ) : (
               <>
@@ -58,13 +58,13 @@ export default async function ProjectsPage({
                   <TableHeader>
                     <TableRow>
                       <TableHead>ID</TableHead>
-                      <TableHead>Name</TableHead>
-                      <TableHead>City</TableHead>
-                      <TableHead>Service</TableHead>
-                      <TableHead>Date</TableHead>
-                      <TableHead>Days</TableHead>
-                      <TableHead>Total Paid</TableHead>
-                      <TableHead className="text-right">Actions</TableHead>
+                      <TableHead>Название</TableHead>
+                      <TableHead>Город</TableHead>
+                      <TableHead>Услуга</TableHead>
+                      <TableHead>Дата</TableHead>
+                      <TableHead>Дней</TableHead>
+                      <TableHead>Оплачено</TableHead>
+                      <TableHead className="text-right">Действия</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -74,7 +74,7 @@ export default async function ProjectsPage({
                         <TableCell className="font-medium">{project.projectName}</TableCell>
                         <TableCell>{project.city.city}</TableCell>
                         <TableCell>{project.serviceType.description}</TableCell>
-                        <TableCell>{new Date(project.date).toLocaleDateString()}</TableCell>
+                        <TableCell>{new Date(project.date).toLocaleDateString("ru-RU")}</TableCell>
                         <TableCell>{project.days || "-"}</TableCell>
                         <TableCell className="text-primary font-medium">
                           ${project.totalPaid.toLocaleString()}

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AppLayout } from "@/components/layout/app-layout";
-import { Header } from "@/components/layout/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { buttonVariants } from "@/components/ui/button";
@@ -37,7 +36,6 @@ export default async function ProjectDetailsPage({
     notFound();
   }
 
-  // Calculate employee costs total
   const employeeCostsTotal = project.employeePrices.reduce((sum, ep) => sum + ep.totalPrice, 0);
 
   return (
@@ -56,55 +54,53 @@ export default async function ProjectDetailsPage({
       </div>
 
       <div className="p-6 space-y-6">
-        {/* Project Overview */}
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg text-primary">Project Overview</CardTitle>
+            <CardTitle className="text-lg text-primary">Обзор проекта</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div>
-                <p className="text-sm text-muted-foreground">City</p>
+                <p className="text-sm text-muted-foreground">Город</p>
                 <p className="font-medium">{project.city.city}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Service Type</p>
+                <p className="text-sm text-muted-foreground">Тип услуги</p>
                 <p className="font-medium">{project.serviceType.description}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Date</p>
-                <p className="font-medium">{new Date(project.date).toLocaleDateString()}</p>
+                <p className="text-sm text-muted-foreground">Дата</p>
+                <p className="font-medium">{new Date(project.date).toLocaleDateString("ru-RU")}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Address</p>
+                <p className="text-sm text-muted-foreground">Адрес</p>
                 <p className="font-medium">{project.address}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Floors</p>
-                <p className="font-medium">{project.floors || "-"}</p>
+                <p className="text-sm text-muted-foreground">Этажи</p>
+                <p className="font-medium">{project.floors || "—"}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Days</p>
-                <p className="font-medium">{project.days || "-"}</p>
+                <p className="text-sm text-muted-foreground">Дней</p>
+                <p className="font-medium">{project.days || "—"}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Material</p>
-                <p className="font-medium">{project.material || "-"}</p>
+                <p className="text-sm text-muted-foreground">Материал</p>
+                <p className="font-medium">{project.material || "—"}</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Status</p>
+                <p className="text-sm text-muted-foreground">Статус</p>
                 <p className="font-medium">
-                  {project.days && project.days > 0 ? "Active" : "Completed"}
+                  {project.days && project.days > 0 ? "Активный" : "Завершён"}
                 </p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Employee Prices */}
         <Card className="border-border/50">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-lg text-primary">Employee Prices</CardTitle>
+            <CardTitle className="text-lg text-primary">Оплата сотрудников</CardTitle>
             <Link href={`/projects/${project.id}/employee-prices/new`} className={buttonVariants({ size: "sm" })}>
               <Plus className="h-4 w-4 mr-2" />
               Add Employee Price
@@ -113,26 +109,26 @@ export default async function ProjectDetailsPage({
           <CardContent>
             {project.employeePrices.length === 0 ? (
               <p className="text-muted-foreground text-center py-4">
-                No employee prices added yet.
+                Строки оплаты сотрудников ещё не добавлены.
               </p>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Employee Type</TableHead>
-                    <TableHead>Day Rate</TableHead>
-                    <TableHead>Work Days</TableHead>
-                    <TableHead>By Plan</TableHead>
-                    <TableHead className="text-right">Total Price</TableHead>
+                    <TableHead>Тип сотрудника</TableHead>
+                    <TableHead>Ставка</TableHead>
+                    <TableHead>Рабочие дни</TableHead>
+                    <TableHead>Тип расчёта</TableHead>
+                    <TableHead className="text-right">Сумма</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {project.employeePrices.map((ep) => (
                     <TableRow key={ep.id}>
                       <TableCell className="font-medium">{ep.employeeType.description}</TableCell>
-                      <TableCell>${ep.employeeType.dayRate}/day</TableCell>
+                      <TableCell>${ep.employeeType.dayRate}/день</TableCell>
                       <TableCell>{ep.workDays}</TableCell>
-                      <TableCell>{ep.byPlan === 1 ? "By Plan" : "By Mistake"}</TableCell>
+                      <TableCell>{ep.byPlan === 1 ? "По плану" : "По ошибке"}</TableCell>
                       <TableCell className="text-right font-medium text-primary">
                         ${ep.totalPrice.toLocaleString()}
                       </TableCell>
@@ -140,7 +136,7 @@ export default async function ProjectDetailsPage({
                   ))}
                   <TableRow className="border-t-2 border-border bg-secondary/50">
                     <TableCell className="font-bold" colSpan={4}>
-                      Employee Costs Total
+                      Итого по сотрудникам
                     </TableCell>
                     <TableCell className="text-right font-bold text-primary">
                       ${employeeCostsTotal.toLocaleString()}
@@ -152,31 +148,30 @@ export default async function ProjectDetailsPage({
           </CardContent>
         </Card>
 
-        {/* Cost Summary */}
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg text-primary">Cost Summary</CardTitle>
+            <CardTitle className="text-lg text-primary">Сводка затрат</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Gas/Food/Water</span>
+                <span className="text-muted-foreground">Газ/питание/вода</span>
                 <span>${project.gasFoodWater.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Bama</span>
+                <span className="text-muted-foreground">Бама</span>
                 <span>${project.bama.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Checker</span>
+                <span className="text-muted-foreground">Чекер</span>
                 <span>${project.checker.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Employee Costs</span>
+                <span className="text-muted-foreground">Затраты на сотрудников</span>
                 <span>${employeeCostsTotal.toLocaleString()}</span>
               </div>
               <div className="flex justify-between border-t border-border pt-3">
-                <span className="font-semibold text-lg">Total Paid</span>
+                <span className="font-semibold text-lg">Всего оплачено</span>
                 <span className="font-bold text-xl text-primary neon-glow-text">
                   ${project.totalPaid.toLocaleString()}
                 </span>

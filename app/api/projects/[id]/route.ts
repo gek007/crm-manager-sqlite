@@ -16,7 +16,7 @@ export async function DELETE(
 
     if (!project) {
       return NextResponse.json(
-        { error: "Project not found" },
+        { error: "Проект не найден" },
         { status: 404 }
       );
     }
@@ -30,7 +30,7 @@ export async function DELETE(
   } catch (error) {
     console.error("Error deleting project:", error);
     return NextResponse.json(
-      { error: "Failed to delete project" },
+      { error: "Не удалось удалить проект" },
       { status: 500 }
     );
   }

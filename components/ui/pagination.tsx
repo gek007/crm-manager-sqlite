@@ -17,7 +17,7 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
   return (
     <div className="flex items-center justify-between pt-4">
       <p className="text-sm text-muted-foreground">
-        Page {currentPage} of {totalPages}
+        Страница {currentPage} из {totalPages}
       </p>
       <div className="flex gap-2">
         {currentPage > 1 ? (

@@ -27,34 +27,34 @@ export default async function SettingsPage() {
 
   const sections = [
     {
-      title: "Master Data",
-      description: "Manage reference data used across projects",
+      title: "Нормативно-справочная информация",
+      description: "Справочники, которые используются в проектах",
       items: [
-        { label: "Cities", count: stats.citiesCount, href: "/cities" },
-        { label: "Service Types", count: stats.serviceTypesCount, href: "/service-types" },
-        { label: "Employee Types", count: stats.employeeTypesCount, href: "/employee-types" },
-        { label: "Cost Types", count: stats.costTypesCount, href: "/cost-types" },
+        { label: "Города", count: stats.citiesCount, href: "/cities" },
+        { label: "Типы услуг", count: stats.serviceTypesCount, href: "/service-types" },
+        { label: "Типы сотрудников", count: stats.employeeTypesCount, href: "/employee-types" },
+        { label: "Типы затрат", count: stats.costTypesCount, href: "/cost-types" },
       ],
     },
     {
-      title: "Costs Management",
-      description: "Manage general costs and cost types",
+      title: "Учёт затрат",
+      description: "Общие затраты и типы затрат",
       items: [
-        { label: "General Costs", count: "-", href: "/general-costs" },
+        { label: "Общие затраты", count: "-", href: "/general-costs" },
       ],
     },
     {
-      title: "Database",
-      description: "Database information",
+      title: "База данных",
+      description: "Сводная информация",
       items: [
-        { label: "Total Projects", count: stats.projectsCount, href: "/projects" },
+        { label: "Всего проектов", count: stats.projectsCount, href: "/projects" },
       ],
     },
   ];
 
   return (
     <AppLayout>
-      <Header title="Settings" />
+      <Header title="Настройки" />
 
       <div className="p-6 space-y-6">
         {sections.map((section) => (
@@ -72,7 +72,7 @@ export default async function SettingsPage() {
                     className="flex items-center justify-between p-4 border border-border rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
                   >
                     <span className="font-medium">{item.label}</span>
-                    <span className="text-sm text-muted-foreground">{typeof item.count === "number" ? `${item.count} items` : item.count}</span>
+                    <span className="text-sm text-muted-foreground">{typeof item.count === "number" ? `${item.count} записей` : item.count}</span>
                   </a>
                 ))}
               </div>
@@ -82,20 +82,20 @@ export default async function SettingsPage() {
 
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg text-primary">Application Info</CardTitle>
+            <CardTitle className="text-lg text-primary">О приложении</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Version</span>
+              <span className="text-muted-foreground">Версия</span>
               <span>1.0.0</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Database</span>
+              <span className="text-muted-foreground">База данных</span>
               <span>SQLite</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Environment</span>
-              <span>Development</span>
+              <span className="text-muted-foreground">Окружение</span>
+              <span>Разработка</span>
             </div>
           </CardContent>
         </Card>

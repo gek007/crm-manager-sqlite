@@ -113,7 +113,7 @@ function KpiCard({
           {trend && (
             <div className="flex items-center gap-1 text-xs font-medium" style={{ color: trendColor }}>
               <TrendIcon className="h-3 w-3" />
-              {trend === "up" ? "Up" : trend === "down" ? "Down" : "—"}
+              {trend === "up" ? "Рост" : trend === "down" ? "Спад" : "—"}
             </div>
           )}
         </div>
@@ -149,7 +149,7 @@ function donutCenterTexts(viewBox: unknown, totalProjects: number) {
         {totalProjects}
       </text>
       <text x={cx} y={cy + 12} textAnchor="middle" dominantBaseline="middle" fill="rgba(255,255,255,0.6)" fontSize={10}>
-        total
+        всего
       </text>
     </>
   );
@@ -184,14 +184,14 @@ export default function DashboardPage() {
           const errMsg =
             body != null && typeof body === "object" && typeof (body as { error?: unknown }).error === "string"
               ? (body as { error: string }).error
-              : `Request failed (${r.status})`;
+              : `Ошибка запроса (${r.status})`;
           setFetchError(errMsg);
           setData(null);
           return;
         }
 
         if (!isAnalyticsBody(body)) {
-          setFetchError("Unexpected analytics response.");
+          setFetchError("Не удалось распознать ответ аналитики.");
           setData(null);
           return;
         }
@@ -199,7 +199,7 @@ export default function DashboardPage() {
         setData(body);
       } catch (e) {
         if (!cancelled) {
-          setFetchError(e instanceof Error ? e.message : "Unable to reach the server.");
+          setFetchError(e instanceof Error ? e.message : "Не удалось связаться с сервером.");
           setData(null);
         }
       } finally {
@@ -226,10 +226,10 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <AppLayout>
-        <Header title="Dashboard"  />
+        <Header title="Дашборд"  />
         <div className="flex items-center justify-center h-96">
           <p style={{ color: "rgba(255,255,255,0.3)", fontFamily: "'DM Mono', monospace", fontSize: 13 }}>
-            Loading analytics…
+            Загрузка аналитики…
           </p>
         </div>
       </AppLayout>
@@ -239,11 +239,11 @@ export default function DashboardPage() {
   if (fetchError) {
     return (
       <AppLayout>
-        <Header title="Dashboard"  />
+        <Header title="Дашборд"  />
         <div className="p-6">
           <Card>
             <CardContent className="flex flex-col items-center justify-center gap-4 py-20">
-              <p className="font-bold text-base" style={{ color: "#e8dfc8" }}>Analytics unavailable</p>
+              <p className="font-bold text-base" style={{ color: "#e8dfc8" }}>Аналитика недоступна</p>
               <p className="text-sm text-center max-w-md" style={{ color: "rgba(255,255,255,0.3)" }}>
                 {fetchError}
               </p>
@@ -253,7 +253,7 @@ export default function DashboardPage() {
                 style={{ color: "#d4a547" }}
                 onClick={() => setLoadKey((k) => k + 1)}
               >
-                Retry
+                Повторить
               </button>
             </CardContent>
           </Card>
@@ -265,7 +265,7 @@ export default function DashboardPage() {
   if (!data || kpis?.totalProjects === 0) {
     return (
       <AppLayout>
-        <Header title="Dashboard"  />
+        <Header title="Дашборд"  />
         <div className="p-6">
           <Card>
             <CardContent className="flex flex-col items-center justify-center gap-4 py-20">
@@ -276,15 +276,15 @@ export default function DashboardPage() {
                 <Building2 className="h-7 w-7" style={{ color: "#d4a547" }} />
               </div>
               <div className="text-center">
-                <p className="font-bold text-base" style={{ color: "#e8dfc8" }}>No projects yet</p>
+                <p className="font-bold text-base" style={{ color: "#e8dfc8" }}>Проектов пока нет</p>
                 <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  Create your first project to see analytics here.
+                  Создайте первый проект, чтобы увидеть статистику.
                 </p>
               </div>
               <div className="flex gap-5 text-xs" style={{ color: "#d4a547" }}>
-                <a href="/cities" className="hover:opacity-70 transition-opacity">Add Cities →</a>
-                <a href="/service-types" className="hover:opacity-70 transition-opacity">Add Service Types →</a>
-                <a href="/projects/new" className="hover:opacity-70 transition-opacity">New Project →</a>
+                <a href="/cities" className="hover:opacity-70 transition-opacity">Добавить города →</a>
+                <a href="/service-types" className="hover:opacity-70 transition-opacity">Типы услуг →</a>
+                <a href="/projects/new" className="hover:opacity-70 transition-opacity">Новый проект →</a>
               </div>
             </CardContent>
           </Card>
@@ -293,22 +293,24 @@ export default function DashboardPage() {
     );
   }
 
+  if (!kpis) return null;
+
   return (
     <AppLayout>
-      <Header title="Dashboard"  />
+      <Header title="Дашборд"  />
 
       <div className="p-3 space-y-2">
 
         {/* ── KPI Row ─────────────────────────────────────────────── */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
-          <KpiCard label="Total Projects" value={String(kpis.totalProjects)} icon={Building2} color="#d4a547" trend="neutral" />
-          <KpiCard label="Total Revenue" value={fmt$(kpis.totalRevenue)} sub="across all projects" icon={DollarSign} color="#6a9e8a" trend={revTrend} />
-          <KpiCard label="Avg per Project" value={fmt$(kpis.avgRevenue)} icon={TrendingUp} color="#5b8bb8" />
-          <KpiCard label="Work Days" value={kpis.totalWorkDays.toLocaleString()} sub="combined" icon={CalendarDays} color="#a07ab0" />
+          <KpiCard label="Всего проектов" value={String(kpis.totalProjects)} icon={Building2} color="#d4a547" trend="neutral" />
+          <KpiCard label="Выручка" value={fmt$(kpis.totalRevenue)} sub="по всем проектам" icon={DollarSign} color="#6a9e8a" trend={revTrend} />
+          <KpiCard label="Средняя сумма по проекту" value={fmt$(kpis.avgRevenue)} icon={TrendingUp} color="#5b8bb8" />
+          <KpiCard label="Рабочие дни" value={kpis.totalWorkDays.toLocaleString()} sub="совокупно" icon={CalendarDays} color="#a07ab0" />
           <KpiCard
-            label="Employee Costs"
+            label="Зарплатные затраты"
             value={fmt$(kpis.totalEmployeeCost)}
-            sub={`${Math.round((kpis.totalEmployeeCost / (kpis.totalRevenue || 1)) * 100)}% of revenue`}
+            sub={`${Math.round((kpis.totalEmployeeCost / (kpis.totalRevenue || 1)) * 100)}% от выручки`}
             icon={Users}
             color="#b87070"
           />
@@ -317,7 +319,7 @@ export default function DashboardPage() {
         {/* ── Revenue Trend ────────────────────────────────────────── */}
         <Card className="fade-up fade-up-1">
           <CardHeader className="pb-2">
-            <CardTitle>Revenue — Last 12 Months</CardTitle>
+            <CardTitle>Выручка — последние 12 месяцев</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={140}>
@@ -331,7 +333,7 @@ export default function DashboardPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "rgba(255,255,255,0.6)" }} axisLine={false} tickLine={false} />
                 <YAxis tickFormatter={(v) => fmt$(v)} tick={{ fontSize: 11, fill: "rgba(255,255,255,0.6)" }} axisLine={false} tickLine={false} width={52} />
-                <Tooltip contentStyle={tooltipStyle} formatter={(value) => [fmt$(value as number), "Revenue"]} />
+                <Tooltip contentStyle={tooltipStyle} formatter={(value) => [fmt$(value as number), "Выручка"]} />
                 <Area
                   type="monotone"
                   dataKey="revenue"
@@ -352,7 +354,7 @@ export default function DashboardPage() {
           {/* By service type */}
           <Card className="fade-up fade-up-2">
             <CardHeader className="pb-2">
-              <CardTitle>By Service Type</CardTitle>
+              <CardTitle>По типам услуг</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={210}>
@@ -391,7 +393,7 @@ export default function DashboardPage() {
           {/* By city */}
           <Card className="fade-up fade-up-2">
             <CardHeader className="pb-2">
-              <CardTitle>By City</CardTitle>
+              <CardTitle>По городам</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={160}>
@@ -400,10 +402,13 @@ export default function DashboardPage() {
                   <YAxis type="category" dataKey="name" width={75} tick={{ fontSize: 12, fill: "rgba(255,255,255,0.75)" }} axisLine={false} tickLine={false} />
                   <Tooltip
                     contentStyle={tooltipStyle}
-                    formatter={(value, _name, props) => [
-                      `${value} project${value !== 1 ? "s" : ""} · ${fmt$(props.payload.revenue)}`,
-                      props.payload.name,
-                    ]}
+                    formatter={(value, _name, props) => {
+                      const v = typeof value === "number" ? value : Number(value);
+                      let word = "проектов";
+                      if (v === 1) word = "проект";
+                      else if (v >= 2 && v <= 4) word = "проекта";
+                      return [`${v} ${word} · ${fmt$(props.payload.revenue)}`, props.payload.name];
+                    }}
                   />
                   <Bar dataKey="value" radius={[0, 4, 4, 0]} maxBarSize={24}>
                     {data.byCity.map((_, i) => (
@@ -422,12 +427,12 @@ export default function DashboardPage() {
           {/* Employee cost breakdown */}
           <Card className="fade-up fade-up-3">
             <CardHeader className="pb-2">
-              <CardTitle>Employee Cost Breakdown</CardTitle>
+              <CardTitle>Структура затрат на сотрудников</CardTitle>
             </CardHeader>
             <CardContent>
               {data.employeeCostByType.length === 0 ? (
                 <p className="text-center py-10 text-sm" style={{ color: "rgba(255,255,255,0.25)" }}>
-                  No employee data
+                  Нет данных по сотрудникам
                 </p>
               ) : (
                 <ResponsiveContainer width="100%" height={210}>
@@ -446,7 +451,7 @@ export default function DashboardPage() {
                     <Tooltip
                       contentStyle={tooltipStyle}
                       formatter={(value, name, props) => [
-                        `${fmt$(value as number)} · ${props.payload.days} days`,
+                        `${fmt$(value as number)} · ${props.payload.days} дн.`,
                         name,
                       ]}
                     />
@@ -471,15 +476,15 @@ export default function DashboardPage() {
           {/* Top projects */}
           <Card className="fade-up fade-up-3">
             <CardHeader className="pb-2">
-              <CardTitle>Top Projects by Revenue</CardTitle>
+              <CardTitle>Топ проектов по выручке</CardTitle>
             </CardHeader>
             <CardContent className="px-0 pb-0">
               <table className="w-full text-sm">
                 <thead>
                   <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                    <th className="text-left px-5 pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.6)" }}>Project</th>
-                    <th className="text-left pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase hidden sm:table-cell" style={{ color: "rgba(255,255,255,0.6)" }}>City</th>
-                    <th className="text-right px-5 pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.6)" }}>Revenue</th>
+                    <th className="text-left px-5 pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.6)" }}>Проект</th>
+                    <th className="text-left pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase hidden sm:table-cell" style={{ color: "rgba(255,255,255,0.6)" }}>Город</th>
+                    <th className="text-right px-5 pb-2 text-[10px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.6)" }}>Выручка</th>
                   </tr>
                 </thead>
                 <tbody>

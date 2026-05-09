@@ -21,27 +21,27 @@ export default async function GeneralCostsPage() {
 
   return (
     <AppLayout>
-      <Header title="General Costs" action={{ label: "Add General Cost", href: "/general-costs/new" }} />
+      <Header title="Общие затраты" action={{ label: "Add General Cost", href: "/general-costs/new" }} />
 
       <div className="p-6">
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle className="text-lg">All General Costs</CardTitle>
+            <CardTitle className="text-lg">Все общие затраты</CardTitle>
           </CardHeader>
           <CardContent>
             {generalCosts.length === 0 ? (
               <p className="text-muted-foreground text-center py-8">
-                No general costs found. Add your first general cost to get started.
+                Записей об общих затратах пока нет. Добавьте первую запись для начала.
               </p>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>ID</TableHead>
-                    <TableHead>Cost Type</TableHead>
-                    <TableHead>Period</TableHead>
-                    <TableHead>Total</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Тип затрат</TableHead>
+                    <TableHead>Период</TableHead>
+                    <TableHead>Сумма</TableHead>
+                    <TableHead className="text-right">Действия</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -75,7 +75,7 @@ export default async function GeneralCostsPage() {
         {costTypes.length > 0 && (
           <Card className="border-border/50 mt-6">
             <CardHeader>
-              <CardTitle className="text-lg">Available Cost Types</CardTitle>
+              <CardTitle className="text-lg">Доступные типы затрат</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">

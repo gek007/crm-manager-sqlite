@@ -1,6 +1,5 @@
 import { AppLayout } from "@/components/layout/app-layout";
 import { Header } from "@/components/layout/header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { ProjectForm } from "@/components/projects/project-form";
@@ -38,7 +37,7 @@ export default async function EditProjectPage({
 
   return (
     <AppLayout>
-      <Header title="Edit Project" />
+      <Header title="Редактирование проекта" />
       <div className="p-6">
         <ProjectForm
           cities={cities}
